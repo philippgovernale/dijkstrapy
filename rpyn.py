@@ -20,12 +20,10 @@ import handler
 # TODO: introduce colour coding
 # TODO: add history?
 
-
 screen.clear()
-getch = getchar._Getch()
 
 while True:
-    var.key = getch()
+    var.key = getchar._Getch()()
 
     if var.key in var.SYS_COMMANDS:
         var.SYS_COMMANDS[var.key]()

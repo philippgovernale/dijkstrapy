@@ -1,9 +1,8 @@
 import var
 import screen
-import handler
 
 import sys
-import time
+
 
 def clear_line(): # ; command
     '''clear line (not including stacks)'''
