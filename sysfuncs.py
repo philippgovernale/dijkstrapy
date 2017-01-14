@@ -9,6 +9,7 @@ def clear_line(): # ; command
     '''clear line (not including stacks)'''
     var.number = None
     var.command = None
+    var.keyword = None
     screen.clear()
 
 def delete_stack(): #rm command
