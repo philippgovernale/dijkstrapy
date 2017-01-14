@@ -18,6 +18,7 @@ decimal = False
 comhelp = False
 lastkey = None
 helpcommand = None
+leadingzero = False
 
 decimal_insert = None
 

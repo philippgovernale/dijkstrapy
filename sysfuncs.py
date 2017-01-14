@@ -6,6 +6,7 @@ import sys
 import time
 
 def clear_line(): # ; command
+    '''clear line (not including stacks)'''
     var.number = None
     var.command = None
     screen.clear()
@@ -60,12 +61,13 @@ def help():
 
 def newline():
     if var.decimal:
-        var.number = handler.add_decimal(var.number, var.decimal_insert)
+        handler.add_decimal(var.number, var.decimal_insert)
         var.decimal = False
     if var.number is not None:
         var.stack.append(float(var.number))
-        screen.draw()
         var.number = None
+        screen.draw()
+    var.leadingzero = False
 
 def backspace():
     screen.write('\b \b')
