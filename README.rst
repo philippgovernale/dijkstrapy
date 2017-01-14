@@ -26,7 +26,6 @@ Known issues
 ------------
 
   - functions are not automatically called after backspacing characters
-  - decimal point numbers starting with 0 not recognised
 
 Documentation
 -------------
