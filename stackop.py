@@ -1,7 +1,6 @@
 import var
 import screen
 
-import time
 
 def two_pop():
     a = var.stack.pop()
@@ -9,8 +8,6 @@ def two_pop():
     return (a, b)
 
 def operate(operator):
-    if var.number is not None:
-        var.stack.append(var.number)
     try:
         a = two_pop()
     except:
