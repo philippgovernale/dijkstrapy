@@ -24,7 +24,7 @@ OPERATORS = {"+":operator.add ,'-':operator.sub,'*':operator.mul,'/':operator.di
 ADV_OPERATORS = {"pow":math.pow, 'srt':math.sqrt, 'cos':math.cos, 'sin':math.sin, "tan":math.tan, "log":math.log, "epow":math.exp, "tlog":math.log10, "!":math.factorial, "rm":sysfuncs.delete_stack, "nlog":math.log,"ra":math.radians, "deg":math.degrees, "crt":mathfuncs.cube_root, 'help':sysfuncs.help, 'man':sysfuncs.help,";":sysfuncs.clear_line}
 MATHS_CONSTANTS = {"pi":math.pi, "eu":math.e}
 
-operation_single = ["srt", "cos", "sin", "tan", "epow", "tlog", "!", "del", "nlog", "ra", "deg", "crt"]
+operation_single = ["srt", "cos", "sin", "tan", "epow", "tlog", "!", "nlog", "ra", "deg", "crt"]
 operation_double = ["pow", "log"]
 operation_none = ["pi", "eu"]
 operation_custom = ["rm", 'help', ';', "man"]
