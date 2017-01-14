@@ -68,11 +68,11 @@ def newline():
 
 def backspace():
     screen.write('\b \b')
-    if var.lastkey.isalpha():
+    if var.keyword is not None:
         var.keyword = var.keyword[:-1]
         if var.keyword == '':
             var.keyword = None
-    elif var.lastkey.isdigit():
+    elif var.number is not None:
         try:
             var.number = int(str(var.number)[:-1])
         except:
