@@ -16,6 +16,12 @@ Features
   - Inbuilt function help
   - Inbuilt manual
 
+Upcoming features
+-----------------
+
+  - colour coding
+  - npr and ncr functions
+
 Platform
 --------
 
@@ -38,22 +44,22 @@ For developers
 Below is a list of the functions that each module contains
 
 - stackop (stack operations) = [two_pop, operate, adv_operate_double, adv_operate_single, adv_operate_none]
-- screen = [clear, draw]
+- screen (drawing operations)= [clear, draw]
 - mathfuncs (additional math functions) = [cube_root]
 - sysfuncs (system functions) = [clear_line, delete_stack, drop, help, newline, backspace, quit, inline_help]
-- handler (input handling functions) = [num_handle, add_decimal, match_and_operate]
+- handler (input handling functions) = [num_handle, match_and_operate, operator_handler, character_handler]
 
 Bug reporting
 ------------
 
-When you find a bug,
+When you find a bug, which you are almost certain of doing, open an issue on Github.
 
-AUTHORS
+Authors
 -------
 
 Philipp Governale
 
-LICENSING
+Licensing
 ---------
 
 Please see the LICENSE file
