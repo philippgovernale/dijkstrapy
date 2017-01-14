@@ -22,9 +22,6 @@ def match_and_operate(keyw):
 def operator_handler(operator):
     if not var.tostack:
         if var.number is not None:
-            if var.decimal:
-                add_decimal(var.number, var.decimal_insert)
-                var.decimal = False
             var.stack.append(float(var.number))
         var.tostack = True
     stackop.operate(operator)

@@ -60,9 +60,6 @@ def help():
     clear_line()
 
 def newline():
-    if var.decimal:
-        handler.add_decimal(var.number, var.decimal_insert)
-        var.decimal = False
     if var.number is not None:
         var.stack.append(float(var.number))
         var.number = None
