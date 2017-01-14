@@ -1,4 +1,4 @@
-import msvcrt
+import getchar
 
 import var
 import screen
@@ -12,7 +12,7 @@ import handler
 # CHANGED: Modularised
 # CHANGED: support erasing
 
-# TODO: exception handling: invalid math operations
+# TODO: invalid math input
 # TODO: functions to add possibly: root, npr, ncr
 # TODO: imaginary number support
 # TODO: bugs to fix: function not recognised when backspace characters, float input enter breaks
@@ -22,9 +22,10 @@ import handler
 
 
 screen.clear()
+getch = getchar._Getch()
 
 while True:
-    var.key = msvcrt.getch()
+    var.key = getch()
 
     if var.key in var.SYS_COMMANDS:
         var.SYS_COMMANDS[var.key]()
