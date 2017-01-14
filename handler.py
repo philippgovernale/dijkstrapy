@@ -1,8 +1,6 @@
-
 import var
 import stackop
 import screen
-import time
 
 def num_handle():
     if var.number is None:
@@ -10,17 +8,6 @@ def num_handle():
     elif var.number:
         var.number = str(var.number) + var.key
     var.tostack = False
-
-# def add_decimal(num, dec_ins_loc):
-#     tot_num_len = len(num)
-#     if tot_num_len == dec_ins_loc:
-#         num = str(float(num))
-#     elif dec_ins_loc == 0:
-#         num = '0.' + str(num)
-#     else:
-#         num = str(num)[:dec_ins_loc] + '.' + str(num)[-(tot_num_len - dec_ins_loc):]
-#     var.number = num
-
 
 def match_and_operate(keyw):
     if keyw in var.operation_single:
@@ -32,7 +19,6 @@ def match_and_operate(keyw):
     elif keyw in var.operation_custom:
         var.ADV_OPERATORS[var.keyword]()
 
-
 def operator_handler(operator):
     if not var.tostack:
         if var.number is not None:
@@ -43,8 +29,6 @@ def operator_handler(operator):
         var.tostack = True
     stackop.operate(operator)
     var.number = None
-
-
 
 def character_handler(char):
     var.command = True
@@ -70,12 +54,3 @@ def character_handler(char):
             match_and_operate(var.keyword)
             var.keyword = None
             var.number = None
-
-
-
-# def decimal_handler():
-#     if var.number == None or var.number == '0':
-#         var.decimal_insert = 0
-#     else:
-#         var.decimal_insert = len(str(var.number))
-#     var.decimal = True

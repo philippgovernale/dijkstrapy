@@ -14,13 +14,9 @@ tostack = True
 number = None
 keyword = None
 command = False
-decimal = False
 comhelp = False
 lastkey = None
 helpcommand = None
-leadingzero = False
-
-decimal_insert = None
 
 SYS_COMMANDS = {'\r':sysfuncs.newline, '\b':sysfuncs.backspace, 'q':sysfuncs.quit, "'":sysfuncs.drop, ';':sysfuncs.clear_line, '?':sysfuncs.inline_help}
 

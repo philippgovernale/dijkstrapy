@@ -1,6 +1,5 @@
 import var
 import screen
-import time
 
 def two_pop():
     a = var.stack.pop()
@@ -20,6 +19,7 @@ def operate(operator):
         screen.draw()
 
 def adv_operate_double(function):
+    # var.number is not none if the user has entered a digit before the command
     if var.number is not None:
         var.stack.append(float(var.number))
     try:
