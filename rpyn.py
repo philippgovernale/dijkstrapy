@@ -4,14 +4,22 @@ import var
 import screen
 import handler
 
-# CHANGED: Add help
-# TODO: exception handling (invalid input, drop func, number of operands)
-# TODO: support erasing
-# TODO: functions to add possibly: root,
 # CHANGED: introduce math functions (sqrt, cos, sin, tan)
 # CHANGED: move to float
 # CHANGED: allow decimal input
 # CHANGED: delete particular stacks
+# CHANGED: Add help
+# CHANGED: Modularised
+# CHANGED: support erasing
+
+# TODO: exception handling: invalid math operations
+# TODO: functions to add possibly: root, npr, ncr
+# TODO: imaginary number support
+# TODO: bugs to fix: function not recognised when backspace characters, float input enter breaks
+# TODO: reorder system functions so that they are in logical order on man page
+# TODO: introduce colour coding
+# TODO: add history?
+
 
 screen.clear()
 
@@ -24,12 +32,13 @@ while True:
         screen.write(var.key)
 
     if var.key.isdigit():
-        var.number = handler.num_handle()
+        handler.num_handle()
     elif var.key in var.OPERATORS:
         handler.operator_handler(var.key)
     elif var.key.isalpha() or var.key in var.ADV_OPERATORS:
         handler.character_handler(var.key)
     elif var.key == '.':
-        handler.decimal_handler()
+        var.number = var.number+'.'
 
-    var.lastkey = var.key
+    if var.key != '\b':
+        var.lastkey = var.key

@@ -5,25 +5,21 @@ import screen
 import time
 
 def num_handle():
-    if var.key == '0' and var.leadingzero == False:
-        print "set leadingzero"
-        var.leadingzero = True
-    elif var.number is None:
-        var.number = int(var.key)
+    if var.number is None:
+        var.number = var.key
     elif var.number:
-        var.number = int(str(var.number) + var.key)
-
+        var.number = str(var.number) + var.key
     var.tostack = False
 
-def add_decimal(num, dec_ins_loc):
-    tot_num_len = len(str(num))
-    if tot_num_len == dec_ins_loc:
-        num = float(num)
-    elif dec_ins_loc == 0:
-        num = float('0.' + str(num))
-    else:
-        num = float(str(num)[:dec_ins_loc] + '.' + str(num)[-(tot_num_len - dec_ins_loc):])
-    var.number = num
+# def add_decimal(num, dec_ins_loc):
+#     tot_num_len = len(num)
+#     if tot_num_len == dec_ins_loc:
+#         num = str(float(num))
+#     elif dec_ins_loc == 0:
+#         num = '0.' + str(num)
+#     else:
+#         num = str(num)[:dec_ins_loc] + '.' + str(num)[-(tot_num_len - dec_ins_loc):]
+#     var.number = num
 
 
 def match_and_operate(keyw):
@@ -77,9 +73,9 @@ def character_handler(char):
 
 
 
-def decimal_handler():
-    if var.number == None or var.number == 0:
-        var.decimal_insert = 0
-    else:
-        var.decimal_insert = len(str(var.number))
-    var.decimal = True
+# def decimal_handler():
+#     if var.number == None or var.number == '0':
+#         var.decimal_insert = 0
+#     else:
+#         var.decimal_insert = len(str(var.number))
+#     var.decimal = True

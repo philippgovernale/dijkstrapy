@@ -1,6 +1,6 @@
 import var
 import screen
-
+import time
 
 def two_pop():
     a = var.stack.pop()
@@ -21,7 +21,7 @@ def operate(operator):
 
 def adv_operate_double(function):
     if var.number is not None:
-        var.stack.append(var.number)
+        var.stack.append(float(var.number))
     try:
         a = two_pop()
     except:
@@ -35,7 +35,7 @@ def adv_operate_double(function):
 
 def adv_operate_single(function):
     if var.number is not None:
-        var.stack.append(var.number)
+        var.stack.append(float(var.number))
     try:
         a = var.stack.pop()
     except:
