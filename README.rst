@@ -25,8 +25,7 @@ Upcoming features
 Platform
 --------
 
-Currently rpyn only supports MICROSOFT WINDOWS due to a dependency of the msvcrt library. I am working on finding
-an alternate library with LINUX and MAC OS support.
+Tested on GNU/Linux and Microsoft Windows.
 
 Known issues
 ------------
@@ -36,7 +35,7 @@ Known issues
 Documentation
 -------------
 
-Documentation on the use of this application is available by running the typing 'man' in the main program
+Documentation on the use of this application is available by typing 'man' in the main program
 
 For developers
 -------------
@@ -58,6 +57,11 @@ Authors
 -------
 
 Philipp Governale
+
+Credits
+-------
+
+Danny Yoo
 
 Licensing
 ---------
