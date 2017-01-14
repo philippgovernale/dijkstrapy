@@ -43,7 +43,14 @@ def adv_operate_single(function):
         raw_input()
         screen.clear()
     else:
-        var.stack.append(function(a))
+        try:
+            result = function(a)
+        except:
+            screen.write("\n cannot apply function %r on %r" %(function, a))
+            raw_input()
+            screen.clear()
+        else:
+            var.stack.append(function(a))
     finally:
         screen.draw()
 

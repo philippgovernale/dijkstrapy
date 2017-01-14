@@ -17,10 +17,15 @@ def delete_stack(): #rm command
         var.stack.append(var.number)
     try:
         a = var.stack.pop()
-        del var.stack[a]
     except:
-        screen.write("\nStack %r does not exist. Cannot remove"%(a))
+        screen.write("\nNeed a stack to remove\n")
         raw_input("Press enter to continue...")
+    else:
+        try:
+            del var.stack[a]
+        except:
+            screen.write("\nStack %r does not exist. Cannot remove\n"%(a))
+            raw_input("Press enter to continue")
     finally:
         screen.draw()
 
@@ -29,6 +34,7 @@ def drop():
         var.stack.pop()
     except:
         screen.write("\nCannot remove stack")
+        raw_input("\nPress enter to continue...")
     finally:
         screen.draw()
 
@@ -36,7 +42,8 @@ def help():
     '''show help manual'''
     screen.clear()
     screen.write('''rPyn Documentation\n
-        rPyn is a calculator
+        rpyn is a reverse polish notation (rpn) calculator that intends to simulate the experience of such a
+        calculator on pc.\n
         Simple operations:\n
         \t+\t| adds numbers {2}\n
         \t-\t| subtracts numbers {2}\n
