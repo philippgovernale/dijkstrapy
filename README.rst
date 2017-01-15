@@ -1,7 +1,7 @@
 What is it?
 ----------
 
-rpyn is a command line reverse polish notation calculator written in python. The purpose of this tool
+dijkstrapy is a command line reverse polish notation calculator written in python. The purpose of this tool
 is to simulate the experience of an rpn calculator on pc by minimising the number of keys required for input.
 
 Features
