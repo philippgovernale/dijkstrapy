@@ -90,7 +90,20 @@ def backspace():
 def quit():
     sys.exit()
 
-def inline_help():
+def catch_inline_help():
     var.comhelp = True
     var.helpcommand = '?'
     screen.write('?')
+
+def inline_help():
+        screen.clear()
+        if var.helpcommand[1:] in var.ADV_OPERATORS:
+            screen.write(var.ADV_OPERATORS[var.helpcommand[1:]].__doc__)
+        elif var.helpcommand[1:] in var.OPERATORS:
+            screen.write(var.OPERATORS[var.helpcommand[1:]].__doc__)
+        raw_input('\nPress enter to continue')
+        screen.clear()
+        var.comhelp = False
+        var.helpcommand = None
+        var.keyword = None
+        var.number = None

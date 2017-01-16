@@ -18,7 +18,7 @@ comhelp = False
 lastkey = None
 helpcommand = None
 
-SYS_COMMANDS = {'\r':sysfuncs.newline, '\b':sysfuncs.backspace, 'q':sysfuncs.quit, "'":sysfuncs.drop, ';':sysfuncs.clear_line, '?':sysfuncs.inline_help}
+SYS_COMMANDS = {'\r':sysfuncs.newline, '\b':sysfuncs.backspace, 'q':sysfuncs.quit, "'":sysfuncs.drop, ';':sysfuncs.clear_line, '?':sysfuncs.catch_inline_help}
 
 OPERATORS = {"+":operator.add ,'-':operator.sub,'*':operator.mul,'/':operator.div}
 ADV_OPERATORS = {"^":math.pow, 'srt':math.sqrt, 'cos':math.cos, 'sin':math.sin, "tan":math.tan, "log":math.log, "epow":math.exp, "tlog":math.log10, "!":math.factorial, "rm":sysfuncs.delete_stack, "nlog":math.log,"ra":math.radians, "deg":math.degrees, "crt":mathfuncs.cube_root, 'help':sysfuncs.help, 'man':sysfuncs.help,";":sysfuncs.clear_line, 'E':mathfuncs.sci_notation, '$':mathfuncs.invert_sign}

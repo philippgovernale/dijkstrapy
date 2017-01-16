@@ -1,6 +1,7 @@
 import var
 import stackop
 import screen
+import sysfuncs
 
 def num_handle():
     if var.number is None:
@@ -31,18 +32,8 @@ def character_handler(char):
     var.command = True
     if var.comhelp:
         var.helpcommand += char
-        if var.helpcommand[1:] in var.ADV_OPERATORS:
-            screen.clear()
-            screen.write(var.ADV_OPERATORS[var.helpcommand[1:]].__doc__)
-        elif var.helpcommand[1:] in var.OPERATORS:
-            screen.clear()
-            screen.write(var.OPERATORS[var.helpcommand[1:]].__doc__)
-        if var.helpcommand[1:] in var.OPERATORS or var.helpcommand[1:] in var.OPERATORS:
-            raw_input('\nPress enter to continue')
-            screen.clear()
-            var.comhelp = False
-            var.keyword = None
-            var.number = None
+        if var.helpcommand[1:] in var.ADV_OPERATORS or var.helpcommand[1:] in var.OPERATORS:
+            sysfuncs.inline_help()
     elif var.keyword is None:
         var.keyword = var.key
         if var.keyword in var.ADV_OPERATORS or var.keyword in var.MATHS_CONSTANTS:
