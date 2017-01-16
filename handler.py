@@ -34,6 +34,10 @@ def character_handler(char):
         if var.helpcommand[1:] in var.ADV_OPERATORS:
             screen.clear()
             screen.write(var.ADV_OPERATORS[var.helpcommand[1:]].__doc__)
+        elif var.helpcommand[1:] in var.OPERATORS:
+            screen.clear()
+            screen.write(var.OPERATORS[var.helpcommand[1:]].__doc__)
+        if var.helpcommand[1:] in var.OPERATORS or var.helpcommand[1:] in var.OPERATORS:
             raw_input('\nPress enter to continue')
             screen.clear()
             var.comhelp = False

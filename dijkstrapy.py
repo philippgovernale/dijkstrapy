@@ -36,9 +36,11 @@ while True:
 
     if var.key.isdigit():
         handler.num_handle()
+    elif var.key in var.OPERATORS and var.comhelp:
+        handler.character_handler(var.key)
     elif var.key in var.OPERATORS:
         handler.operator_handler(var.key)
-    elif var.key.isalpha() or var.key in var.ADV_OPERATORS:
+    elif var.key.isalpha() or var.key in var.ADV_OPERATORS or var.key in var.OPERATORS:
         handler.character_handler(var.key)
     elif var.key == '.':
         var.number = var.number+'.'
