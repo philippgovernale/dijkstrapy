@@ -3,7 +3,6 @@ import screen
 
 import sys
 
-
 def clear_line(): # ; command
     '''clear line (not including stacks)'''
     var.number = None
@@ -32,7 +31,7 @@ def drop():
     '''remove last stack'''
     try:
         var.stack.pop()
-    except IndexError
+    except IndexError:
         screen.write("\nCannot remove stack")
         raw_input("\nPress enter to continue...")
     finally:
