@@ -1,6 +1,5 @@
 import var
 import stackop
-import screen
 import sysfuncs
 
 def num_handle():
