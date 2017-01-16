@@ -1,4 +1,5 @@
 import math
+import time
 
 def cube_root(operand):
     '''Return the cube root of x'''
@@ -13,4 +14,10 @@ def sci_notation(operand1, operand2):
     return result
 
 def invert_sign(operand):
+    '''invert sign of operand'''
     return -operand
+
+def decimal_places(operand1, operand2):
+    precision = int(operand2)
+    result = round(operand1, precision)
+    return result
