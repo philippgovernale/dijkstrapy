@@ -3,6 +3,9 @@ import getchar
 import var
 import screen
 import handler
+import mathfuncs
+import stackop
+import sysfuncs
 
 # CHANGED: introduce math functions (sqrt, cos, sin, tan)
 # CHANGED: move to float

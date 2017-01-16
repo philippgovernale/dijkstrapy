@@ -20,6 +20,8 @@ Upcoming features
 -----------------
 
   - colour coding
+  - support scientific notation
+  - round function
   - npr and ncr functions
 
 Platform
