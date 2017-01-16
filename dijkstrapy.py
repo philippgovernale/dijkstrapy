@@ -3,9 +3,6 @@ import getchar
 import var
 import screen
 import handler
-import mathfuncs
-import stackop
-import sysfuncs
 
 # CHANGED: introduce math functions (sqrt, cos, sin, tan)
 # CHANGED: move to float
@@ -21,7 +18,11 @@ import sysfuncs
 # TODO: bugs to fix: function not recognised when backspace characters, float input enter breaks
 # TODO: reorder system functions so that they are in logical order on man page
 # TODO: introduce colour coding
-# TODO: add history?
+# TODO: add number history
+# TODO: support entering negative numbers (\-)
+# TODO: add scientific notation (E?)
+# TODO: round function
+# TODO: settings? do we need ncurses
 
 screen.clear()
 
