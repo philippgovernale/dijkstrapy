@@ -1,5 +1,6 @@
 import var
 import screen
+import sys
 
 def two_pop():
     a = var.stack.pop()
@@ -29,7 +30,18 @@ def adv_operate_double(function):
         raw_input()
         screen.clear()
     else:
-        var.stack.append(function(a[1], a[0]))
+        try:
+            result = function(a[1], a[0])
+        except ValueError:
+            screen.write("\n%r does not accept decimal input. Please enter integer values" %(function))
+            raw_input()
+            screen.clear()
+        except OverflowError:
+            screen.write("\nOverflow. Please choose numbers that leads to a result that is smaller than %r"%(sys.float_info))
+            raw_input()
+            screen.clear()
+        else:
+            var.stack.append(function(a[1], a[0]))
     finally:
         screen.draw()
 
@@ -45,8 +57,12 @@ def adv_operate_single(function):
     else:
         try:
             result = function(a)
-        except:
-            screen.write("\n cannot apply function %r on %r" %(function, a))
+        except ValueError:
+            screen.write("\n%r does not accept decimal input. Please enter integer values" %(function))
+            raw_input()
+            screen.clear()
+        except OverflowError:
+            screen.write("\nOverflow. Please choose numbers that leads to a result that is smaller than %r"%(sys.float_info))
             raw_input()
             screen.clear()
         else:
