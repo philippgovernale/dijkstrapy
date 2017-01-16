@@ -10,7 +10,7 @@ def two_pop():
 def operate(operator):
     try:
         a = two_pop()
-    except:
+    except IndexError:
         screen.write("\nTwo numbers required in the stack to complete operation")
         raw_input()
         screen.clear()
@@ -25,7 +25,7 @@ def adv_operate_double(function):
         var.stack.append(float(var.number))
     try:
         a = two_pop()
-    except:
+    except IndexError:
         screen.write("\nTwo numbers required in the stack to complete operation")
         raw_input()
         screen.clear()
@@ -41,7 +41,7 @@ def adv_operate_double(function):
             raw_input()
             screen.clear()
         else:
-            var.stack.append(function(a[1], a[0]))
+            var.stack.append(result)
     finally:
         screen.draw()
 
@@ -50,7 +50,7 @@ def adv_operate_single(function):
         var.stack.append(float(var.number))
     try:
         a = var.stack.pop()
-    except:
+    except IndexError:
         screen.write("\nOne number required in the stack to complete operation")
         raw_input()
         screen.clear()
@@ -66,7 +66,7 @@ def adv_operate_single(function):
             raw_input()
             screen.clear()
         else:
-            var.stack.append(function(a))
+            var.stack.append(result)
     finally:
         screen.draw()
 

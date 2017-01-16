@@ -17,32 +17,32 @@ def delete_stack(): #rm command
         var.stack.append(var.number)
     try:
         a = var.stack.pop()
-    except:
+    except IndexError:
         screen.write("\nNeed a stack to remove\n")
-        raw_input("Press enter to continue...")
     else:
         try:
             del var.stack[a]
-        except:
+        except IndexError:
             screen.write("\nStack %r does not exist. Cannot remove\n"%(a))
-            raw_input("Press enter to continue")
     finally:
+        raw_input("Press enter to continue")
         screen.draw()
 
 def drop():
+    '''remove last stack'''
     try:
         var.stack.pop()
-    except:
+    except IndexError
         screen.write("\nCannot remove stack")
         raw_input("\nPress enter to continue...")
     finally:
         screen.draw()
 
-def help():
+def assist():
     '''show help manual'''
     screen.clear()
-    screen.write('''rPyn Documentation\n
-        rpyn is a reverse polish notation (rpn) calculator that intends to simulate the experience of such a
+    screen.write('''Dijkstrapy Documentation\n
+        Dijkstrapy is a reverse polish notation (rpn) calculator that intends to simulate the experience of such a
         calculator on pc.\n
         Simple operations:\n
         \t+\t| adds numbers {2}\n
@@ -80,9 +80,8 @@ def backspace():
         if var.keyword == '':
             var.keyword = None
     elif var.number is not None:
-        try:
-            var.number = int(str(var.number)[:-1])
-        except:
+        var.number = int(str(var.number)[:-1])
+        if var.number == '':
             var.number = None
     elif var.helpcommand is not None:
         var.helpcommand = var.helpcommand[:-1]
@@ -91,7 +90,7 @@ def backspace():
     elif var.lastkey == '.':
         var.decimal = False
 
-def quit():
+def leave():
     sys.exit()
 
 def catch_inline_help():
@@ -100,14 +99,14 @@ def catch_inline_help():
     screen.write('?')
 
 def inline_help():
-        screen.clear()
-        if var.helpcommand[1:] in var.ADV_OPERATORS:
-            screen.write(var.ADV_OPERATORS[var.helpcommand[1:]].__doc__)
-        elif var.helpcommand[1:] in var.OPERATORS:
-            screen.write(var.OPERATORS[var.helpcommand[1:]].__doc__)
-        raw_input('\nPress enter to continue')
-        screen.clear()
-        var.comhelp = False
-        var.helpcommand = None
-        var.keyword = None
-        var.number = None
+    screen.clear()
+    if var.helpcommand[1:] in var.ADV_OPERATORS:
+        screen.write(var.ADV_OPERATORS[var.helpcommand[1:]].__doc__)
+    elif var.helpcommand[1:] in var.OPERATORS:
+        screen.write(var.OPERATORS[var.helpcommand[1:]].__doc__)
+    raw_input('\nPress enter to continue')
+    screen.clear()
+    var.comhelp = False
+    var.helpcommand = None
+    var.keyword = None
+    var.number = None

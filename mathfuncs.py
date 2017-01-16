@@ -1,5 +1,4 @@
 import math
-import time
 
 def cube_root(operand):
     '''Return the cube root of x'''
