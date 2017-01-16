@@ -11,6 +11,8 @@ import handler
 # CHANGED: Add help
 # CHANGED: Modularised
 # CHANGED: support erasing
+# CHANGED: support entering negative numbers (\-)
+# CHANGED: add scientific notation (E?)
 
 # TODO: invalid math input
 # TODO: functions to add possibly: root, npr, ncr
@@ -19,10 +21,8 @@ import handler
 # TODO: reorder system functions so that they are in logical order on man page
 # TODO: introduce colour coding
 # TODO: add number history
-# TODO: support entering negative numbers (\-)
-# TODO: add scientific notation (E?)
 # TODO: round function
-# TODO: settings? do we need ncurses
+# TODO: settings? (write in scientific notation, turn colours on/off, change command keys) do we need ncurses
 
 screen.clear()
 
@@ -43,7 +43,10 @@ while True:
     elif var.key.isalpha() or var.key in var.ADV_OPERATORS or var.key in var.OPERATORS:
         handler.character_handler(var.key)
     elif var.key == '.':
-        var.number = var.number+'.'
+        if var.number:
+            var.number = var.number+'.'
+        else:
+            var.number = '.'
 
     if var.key != '\b':
         var.lastkey = var.key
