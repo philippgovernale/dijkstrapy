@@ -84,6 +84,10 @@ def backspace():
             var.number = int(str(var.number)[:-1])
         except:
             var.number = None
+    elif var.helpcommand is not None:
+        var.helpcommand = var.helpcommand[:-1]
+        if var.helpcommand == '':
+            var.helpcommand = None
     elif var.lastkey == '.':
         var.decimal = False
 
