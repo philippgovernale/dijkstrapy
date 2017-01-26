@@ -32,7 +32,9 @@ Tested on GNU/Linux and Microsoft Windows.
 Known issues
 ------------
 
-  - functions are not automatically called after backspacing characters
+  - Unexpected results due to floating point behaviour (e.g 1.2+ 2.2 = 4.4000000004)
+  - Backspace in GNU/Linux does not work
+  - Some characters from previous operation show up before printing of result in GNU\Linux
 
 Documentation
 -------------
