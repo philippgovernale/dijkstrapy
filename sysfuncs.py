@@ -79,7 +79,7 @@ def backspace():
         if var.keyword == '':
             var.keyword = None
     elif var.number is not None:
-        var.number = int(str(var.number)[:-1])
+        var.number = float(str(var.number)[:-1])
         if var.number == '':
             var.number = None
     elif var.helpcommand is not None:
