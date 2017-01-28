@@ -2,6 +2,7 @@ import var
 import screen
 
 import sys
+import pkg_resources
 
 def clear_line(): # ; command
     '''clear line (not including stacks)'''
@@ -109,3 +110,10 @@ def inline_help():
     var.helpcommand = None
     var.keyword = None
     var.number = None
+
+def display_version():
+    version = pkg_resources.require('dijkstrapy')[0].version
+    screen.clear()
+    screen.write('\b \b'+version+'\n')
+    raw_input("Press enter to continue")
+    screen.clear()

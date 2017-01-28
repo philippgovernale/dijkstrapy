@@ -55,7 +55,8 @@ ADV_OPERATORS = {
                  'E':mathfuncs.sci_notation,
                  '$':mathfuncs.invert_sign,
                  'dp':mathfuncs.decimal_places,
-                 'rnd':mathfuncs.rnd
+                 'rnd':mathfuncs.rnd,
+                 'ver':sysfuncs.display_version
                  }
 
 MATHS_CONSTANTS = {
@@ -66,4 +67,4 @@ MATHS_CONSTANTS = {
 operation_single = ['srt', 'cos', 'sin', 'tan', 'epow', 'tlog', '!', 'nlog', 'ra', 'deg', 'crt', '$']
 operation_double = ['^', 'log', 'E', 'dp', 'rnd']
 operation_none = ['pi', 'eu']
-operation_custom = ['rm', 'help', ';', 'man']
+operation_custom = ['rm', 'help', ';', 'man', 'ver']
