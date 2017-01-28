@@ -21,7 +21,7 @@ setup(
     author_email='philipp.governale1@gmail.com',
     license='GPLv3+',
     py_modules = ['dijkstrapy', 'getchar','handler','mathfuncs', 'screen', 'stackop', 'sysfuncs', 'var', 'win10col'],
-    data_files=[('', ['VERSION']), ('', 'config.ini')],
+    data_files=[('', ['VERSION']), ('', ['config.ini'])],
     entry_points='''
         [console_scripts]
         dijkstrapy=dijkstrapy
