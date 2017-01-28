@@ -1,8 +1,11 @@
 from setuptools import setup
 
+version_file = open('VERSION')
+version = version_file.read().strip()
+
 setup(
     name='dijkstrapy',
-    version='0.1.1',
+    version=version,
     description='A CLI rpn calculator',
     long_description='A command-line calculator using reverse polish notation that is fully written in Python',
     classifiers=[
@@ -18,6 +21,7 @@ setup(
     author_email='philipp.governale1@gmail.com',
     license='GPLv3+',
     py_modules = ['dijkstrapy', 'getchar','handler','mathfuncs', 'screen', 'stackop', 'sysfuncs', 'var', 'win10col'],
+    data_files=[('', ['VERSION']), ('', 'config.ini')],
     entry_points='''
         [console_scripts]
         dijkstrapy=dijkstrapy

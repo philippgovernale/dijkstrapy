@@ -2,6 +2,7 @@ import var
 import screen
 
 import sys
+import pkg_resources
 
 def clear_line(): # ; command
     '''clear line (not including stacks)'''
@@ -40,28 +41,31 @@ def drop():
 def assist():
     '''show help manual'''
     screen.clear()
-    screen.write('''Dijkstrapy Documentation\n
+    screen.custom_write('Dijkstrapy Documentation', 'underline')
+    screen.write('''\n
         Dijkstrapy is a reverse polish notation (rpn) calculator that intends to simulate the experience of such a
         calculator on pc.\n
         Simple operations:\n
-        \t+\t| adds numbers {2}\n
-        \t-\t| subtracts numbers {2}\n
-        \t*\t| multiplies numbers {2}\n
-        \t/\t| divides number {2}\n
-        Math functions:\n
-    ''')
+        ''')
+    screen.write('''
+        \t%s\t| adds numbers {2}\n
+        \t%s\t| subtracts numbers {2}\n
+        \t%s\t| multiplies numbers {2}\n
+        \t%s\t| divides number {2}\n
+        Math functions:
+        '''%(screen.custom_write('+', 'yellow'), screen.custom_write('-', 'yellow'), screen.custom_write('*', 'yellow'), screen.custom_write('/', 'yellow')))
     for fname in var.ADV_OPERATORS:
         if var.ADV_OPERATORS[fname].__doc__ is not None:
-            screen.write('\t\t%s\t| %s\n\n' %(fname, (var.ADV_OPERATORS[fname].__doc__.splitlines()[-1:][0])))
+            screen.write('\n\t\t%s\t| %s\n' %(screen.custom_write(fname, 'green'), (var.ADV_OPERATORS[fname].__doc__.splitlines()[-1:][0])))
     screen.write('''
         System operations:\n
-        \t'\t| drops highest stack member {0}\n
-        \trm\t| drops requested member from stack {1}\n
-        \thelp\t| opens full documentation\n
-        \t?funcname\t| opens documentation for function {1}\n
-        \t;\t| clears input (not including stack members) {0}\n
-        \tq\t| quit
-        ''')
+        \t%s\t| drops highest stack member {0}\n
+        \t%s\t| drops requested member from stack {1}\n
+        \t%s\t| opens full documentation\n
+        \t%s\t| opens documentation for function {1}\n
+        \t%s\t| clears input (not including stack members) {0}\n
+        \t%s\t| quit
+        '''%(screen.custom_write("'", 'cyan'), screen.custom_write('rm', 'cyan'), screen.custom_write('help', 'cyan'), screen.custom_write('?funcname', 'cyan'), screen.custom_write(';', 'cyan'), screen.custom_write('q', 'cyan')))
     raw_input("Press enter to exit documentation")
     clear_line()
 
@@ -73,7 +77,7 @@ def newline():
     var.leadingzero = False
 
 def backspace():
-    screen.write('\b \b')
+    screen.write('\b ')
     if var.keyword is not None:
         var.keyword = var.keyword[:-1]
         if var.keyword == '':
@@ -93,7 +97,6 @@ def leave():
 def catch_inline_help():
     var.comhelp = True
     var.helpcommand = '?'
-    screen.write('?')
 
 def inline_help():
     screen.clear()
@@ -107,3 +110,11 @@ def inline_help():
     var.helpcommand = None
     var.keyword = None
     var.number = None
+
+def display_version():
+    version_file = open('VERSION')
+    version = version_file.read().strip()
+    screen.clear()
+    screen.write('\b \b'+version+'\n')
+    raw_input("Press enter to continue")
+    screen.clear()
