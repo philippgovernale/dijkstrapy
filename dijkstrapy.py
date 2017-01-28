@@ -37,12 +37,11 @@ while True:
 
     if var.key in var.SYS_COMMANDS:
         var.SYS_COMMANDS[var.key]()
-    # else:
-    #     screen.write(var.key)
+
     if var.comhelp:
-        screen.write_custom(var.key, 'cyan')
+        screen.write_custom(var.key, var.conf_colour_inline_help)
     elif var.key.isalpha():
-        screen.write_custom(var.key, 'green')
+        screen.write_custom(var.key, var.conf_colour_alpha)
     elif var.key in var.ADV_OPERATORS:
         screen.write_custom(var.key, 'red')
     else:

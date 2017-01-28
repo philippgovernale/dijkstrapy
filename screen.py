@@ -13,6 +13,7 @@ class Colour():
     YELLOW = '\033[33m'
     MAGENTA = '\033[35m'
     CYAN = '\033[36m'
+    WHITE = '\033[37m'
 
     UNDERLINE = '\033[4m'
     BOLD = '\033[1m'
@@ -35,6 +36,10 @@ def return_custom(text, style):
         selstyle = Colour.CYAN
     elif style == 'green':
         selstyle = Colour.GREEN
+    elif style == 'white':
+        selstyle == Colour.WHITE
+    elif style == 'reset':
+        selstyle == Colour.RESET
     elif style == 'bold':
         selstyle == Colour.BOLD
     elif style == 'underline':
@@ -53,6 +58,6 @@ def draw():
         write('\b \b')
     for digits in var.stack:
         if var.conf_e_display:
-            write("stack %e:  %r\n" %(return_custom(str(var.stack.index(digits)), var.conf_colour_digit),digits))
+            write("stack %s:  %e\n" %(return_custom(str(var.stack.index(digits)), var.conf_colour_digit_stack_number), digits))
         else:
-            write("stack %s:  %r\n" %(return_custom(str(var.stack.index(digits)), var.conf_colour_digit),digits))
+            write("stack %s:  %s\n" %(return_custom(str(var.stack.index(digits)), var.conf_colour_digit_stack_number),return_custom(str(digits), var.conf_colour_digit_stack)))

@@ -100,6 +100,7 @@ def catch_inline_help():
 
 def inline_help():
     screen.clear()
+    screen.write('\b \b')
     if var.helpcommand[1:] in var.ADV_OPERATORS:
         screen.write(var.ADV_OPERATORS[var.helpcommand[1:]].__doc__)
     elif var.helpcommand[1:] in var.OPERATORS:

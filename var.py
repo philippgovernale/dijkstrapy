@@ -19,7 +19,11 @@ lastkey = None
 helpcommand = None
 
 conf_e_display = False
-conf_colour_digit = 'yellow'
+conf_colour_reset = False
+conf_colour_digit_stack_number = 'yellow'
+conf_colour_digit_stack = 'green'
+conf_colour_alpha = 'green'
+conf_colour_inline_help = 'cyan'
 
 SYS_COMMANDS = {
                 '\r':sysfuncs.newline,
