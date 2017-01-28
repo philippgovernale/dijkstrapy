@@ -76,7 +76,7 @@ def newline():
     var.leadingzero = False
 
 def backspace():
-    screen.write('\b \b')
+    screen.write('\b ')
     if var.keyword is not None:
         var.keyword = var.keyword[:-1]
         if var.keyword == '':
