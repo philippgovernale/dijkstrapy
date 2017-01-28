@@ -3,6 +3,7 @@ import getchar
 import var
 import screen
 import handler
+import readconfig
 
 # CHANGED: introduce math functions (sqrt, cos, sin, tan)
 # CHANGED: move to float
@@ -25,6 +26,8 @@ import handler
 # TODO: settings? (write in scientific notation, turn colours on/off, change command keys) do we need ncurses
 
 screen.clear()
+
+readconfig.load_config()
 
 while True:
     var.key = getchar._Getch()()
