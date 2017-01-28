@@ -19,9 +19,7 @@ Features
 Upcoming features
 -----------------
 
-  - colour coding
-  - support scientific notation
-  - round function
+  - configuration file
   - npr and ncr functions
 
 Platform
