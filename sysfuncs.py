@@ -112,7 +112,8 @@ def inline_help():
     var.number = None
 
 def display_version():
-    version = pkg_resources.require('dijkstrapy')[0].version
+    version_file = open('VERSION')
+    version = version_file.read().strip()
     screen.clear()
     screen.write('\b \b'+version+'\n')
     raw_input("Press enter to continue")
