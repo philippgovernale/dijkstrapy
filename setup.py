@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='dijkstrapy',
-    version='0.1.1',
+    version='0.1.3',
     description='A CLI rpn calculator',
     long_description='A command-line calculator using reverse polish notation that is fully written in Python',
     classifiers=[
