@@ -20,7 +20,7 @@ setup(
     author='Philipp Governale',
     author_email='philipp.governale1@gmail.com',
     license='GPLv3+',
-    py_modules = ['dijkstrapy', 'getchar','handler','mathfuncs', 'screen', 'stackop', 'sysfuncs', 'var', 'win10col'],
+    py_modules = ['dijkstrapy', 'getchar','handler','mathfuncs', 'screen', 'stackop', 'sysfuncs', 'var'],
     data_files=[('', ['VERSION'])],
     entry_points='''
         [console_scripts]
