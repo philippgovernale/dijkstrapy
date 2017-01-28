@@ -7,5 +7,3 @@ def enable_VT():
     kernel32.GetConsoleMode(hStdOut, ctypes.byref(mode))
     mode.value |= 4
     kernel32.SetConsoleMode(hStdOut, mode)
-
-print '\033[31m' + "some red text"

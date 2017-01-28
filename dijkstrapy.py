@@ -4,7 +4,6 @@ import os
 import var
 import screen
 import handler
-import win10col
 
 # CHANGED: introduce math functions (sqrt, cos, sin, tan)
 # CHANGED: move to float
@@ -27,6 +26,7 @@ import win10col
 screen.clear()
 
 if os.name == 'nt':
+    import win10col
     win10col.enable_VT()
 
 while True:
