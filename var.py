@@ -18,6 +18,7 @@ comhelp = False
 lastkey = None
 helpcommand = None
 
+conf_ansi = True
 conf_e_display = False
 conf_colour_reset = False
 conf_colour_digit_stack_number = 'yellow'

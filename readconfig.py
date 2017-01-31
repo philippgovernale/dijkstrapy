@@ -19,6 +19,7 @@ def reset_colours():
 
 
 def load_config():
+
     cfg = ConfigParser()
     cfg.read('config.ini')
 
@@ -40,3 +41,6 @@ def load_config():
     colour_reset = cfg.get('Main Configurations', 'colour_reset')
     var.conf_colour_reset = str2bool(colour_reset)
     reset_colours()
+
+    ansi = cfg.get('Main Configurations', 'ansi')
+    var.conf_ansi = str2bool(ansi)
