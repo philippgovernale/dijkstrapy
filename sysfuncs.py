@@ -110,7 +110,7 @@ def inline_help():
     var.number = None
 
 def display_version():
-    version_file = open('VERSION')
+    version_file = open('/data/VERSION')
     version = version_file.read().strip()
     screen.clear()
     screen.write('\b \b'+version+'\n')
