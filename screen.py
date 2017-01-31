@@ -58,12 +58,12 @@ def draw():
         write('\b \b')
     for digits in var.stack:
         if var.conf_ansi:
-            if var.conf_e_display:
+            if var.conf_sci_not:
                 write("stack %s:  %e\n" %(return_custom(str(var.stack.index(digits)), var.conf_colour_digit_stack_number), digits))
             else:
                 write("stack %s:  %s\n" %(return_custom(str(var.stack.index(digits)), var.conf_colour_digit_stack_number),return_custom(str(digits), var.conf_colour_digit_stack)))
         else:
-            if var.conf_e_display:
+            if var.conf_sci_not:
                 write("stack %s   %e\n" %(str(var.stack.index(digits)), digits))
             else:
                 write("stack %s   %s\n" %(str(var.stack.index(digits)), digits))

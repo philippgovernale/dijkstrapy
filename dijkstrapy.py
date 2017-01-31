@@ -27,6 +27,7 @@ import readconfig
 screen.clear()
 
 readconfig.load_config()
+readconfig.read_argv()
 
 if os.name == 'nt':
     import win10col

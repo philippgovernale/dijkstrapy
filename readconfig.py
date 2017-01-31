@@ -1,5 +1,7 @@
 from ConfigParser import ConfigParser
 import var
+import sys
+import sysfuncs
 
 def str2bool(s):
     return s.lower() in ("yes", "1", 'true')
@@ -21,10 +23,10 @@ def reset_colours():
 def load_config():
 
     cfg = ConfigParser()
-    cfg.read('/data/config.ini')
+    cfg.read('config.ini')
 
-    e_display = cfg.get('Main Configurations', 'display_e')
-    var.conf_e_display = str2bool(e_display)
+    sci_not = cfg.get('Main Configurations', 'scientific_notation')
+    var.conf_sci_not = str2bool(sci_not)
 
     colour_digit_stack_number = cfg.get('Colour Configurations', 'colour_digit_stack_number')
     var.conf_colour_digit_stack_number = check_colour(colour_digit_stack_number)
@@ -44,3 +46,17 @@ def load_config():
 
     ansi = cfg.get('Main Configurations', 'ansi')
     var.conf_ansi = str2bool(ansi)
+
+def read_argv():
+    arguments = sys.argv[1:]
+    for arg in arguments:
+        if arg in ['--noansi', '--help', '--sci-not']:
+            if arg == '--noansi':
+                var.conf_ansi = False
+            elif arg == '--help':
+                sysfuncs.assist()
+            elif arg == '--sci-not':
+                var.conf_sci_not = True
+        else:
+            print arg, "is not a dijkstrapy command. See 'dijkstrapy --help'"
+            sys.exit()
