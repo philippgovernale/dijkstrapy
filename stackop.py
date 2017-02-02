@@ -1,11 +1,19 @@
 import var
 import screen
 import sys
+from decimal import Decimal, getcontext
 
 def two_pop():
     a = var.stack.pop()
     b = var.stack.pop()
     return (a, b)
+
+def append_rogue():
+    if var.number is not None:
+        if var.conf_decimal:
+            var.stack.append(Decimal(var.number))
+        else:
+            var.stack(float(var.number))
 
 def operate(operator):
     try:
@@ -21,8 +29,7 @@ def operate(operator):
 
 def adv_operate_double(function):
     # var.number is not none if the user has entered a digit before the command
-    if var.number is not None:
-        var.stack.append(float(var.number))
+    append_rogue()
     try:
         a = two_pop()
     except IndexError:
@@ -46,8 +53,7 @@ def adv_operate_double(function):
         screen.draw()
 
 def adv_operate_single(function):
-    if var.number is not None:
-        var.stack.append(float(var.number))
+    append_rogue()
     try:
         a = var.stack.pop()
     except IndexError:
@@ -71,5 +77,8 @@ def adv_operate_single(function):
         screen.draw()
 
 def adv_operate_none(function):
-    var.stack.append(function)
+    if var.conf_decimal:
+        var.stack.append(Decimal(function))
+    else:
+        var.stack.append(function)
     screen.draw()

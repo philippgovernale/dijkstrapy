@@ -20,6 +20,9 @@ helpcommand = None
 
 conf_ansi = True
 conf_sci_not = False
+conf_decimal = True
+conf_decimal_precision = 20
+
 conf_colour_reset = False
 conf_colour_digit_stack_number = 'yellow'
 conf_colour_digit_stack = 'green'

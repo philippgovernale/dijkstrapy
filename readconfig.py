@@ -19,6 +19,14 @@ def reset_colours():
         var.conf_colour_alpha = 'reset'
         var.conf_colour_inline_help = 'reset'
 
+def check_precision(precision):
+    try:
+        prec = int(precision)
+        return prec
+    except:
+        prec = 20
+        return prec
+
 
 def load_config():
 
@@ -43,6 +51,13 @@ def load_config():
     colour_reset = cfg.get('Main Configurations', 'colour_reset')
     var.conf_colour_reset = str2bool(colour_reset)
     reset_colours()
+
+    decimal = cfg.get('Number Configurations', 'decimal')
+    var.conf_decimal = str2bool(decimal)
+
+    decimal_precision = cfg.get('Number Configurations', 'decimal_precision')
+    var.conf_decimal_precision = check_precision(decimal_precision)
+    sysfuncs.set_precision(var.conf_decimal_precision)
 
     ansi = cfg.get('Main Configurations', 'ansi')
     var.conf_ansi = str2bool(ansi)

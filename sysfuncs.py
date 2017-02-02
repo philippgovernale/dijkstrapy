@@ -3,6 +3,7 @@ import screen
 
 import sys
 import pkg_resources
+from decimal import Decimal, getcontext
 
 def clear_line(): # ; command
     '''clear line (not including stacks)'''
@@ -68,7 +69,11 @@ def assist():
 
 def newline():
     if var.number is not None:
-        var.stack.append(float(var.number))
+        if var.conf_decimal:
+            getcontext.prec = 10
+            var.stack.append(Decimal(var.number))
+        else:
+            var.stack.append(float(var.number))
         var.number = None
         screen.draw()
     var.leadingzero = False
@@ -116,3 +121,11 @@ def display_version():
     screen.write('\b \b'+version+'\n')
     raw_input("Press enter to continue")
     screen.clear()
+
+def set_precision(precision):
+    try:
+        precis = int(precision)
+    except:
+        precis = 20
+    else:
+        getcontext().prec = precis

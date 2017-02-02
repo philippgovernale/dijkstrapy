@@ -1,6 +1,7 @@
 import var
 import stackop
 import sysfuncs
+from decimal import Decimal
 
 def num_handle():
     if var.number is None:
@@ -22,7 +23,10 @@ def match_and_operate(keyw):
 def operator_handler(operator):
     if not var.tostack:
         if var.number is not None:
-            var.stack.append(float(var.number))
+            if var.conf_decimal:
+                var.stack.append(Decimal(var.number))
+            else:
+                var.stack.append(float(var.number))
         var.tostack = True
     stackop.operate(operator)
     var.number = None
