@@ -13,7 +13,7 @@ def append_rogue():
         if var.conf_decimal:
             var.stack.append(Decimal(var.number))
         else:
-            var.stack(float(var.number))
+            var.stack.append(float(var.number))
 
 def operate(operator):
     try:
