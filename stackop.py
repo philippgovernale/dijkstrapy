@@ -6,7 +6,7 @@ from decimal import Decimal, getcontext
 def two_pop():
     a = var.stack.pop()
     b = var.stack.pop()
-    return (a, b)
+    return (float(a), float(b))
 
 def append_rogue():
     if var.number is not None:

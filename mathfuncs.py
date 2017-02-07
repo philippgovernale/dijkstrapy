@@ -1,5 +1,6 @@
 import math
 from decimal import *
+from fractions import Fraction
 
 def cube_root(operand):
     '''Return the cube root of x'''
@@ -43,3 +44,6 @@ def rnd(operand1, operand2):
             f = float(a)
             result = int(f)
     return result
+
+def fract(operand):
+    return Fraction(operand).limit_denominator()
