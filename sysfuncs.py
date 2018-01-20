@@ -5,6 +5,8 @@ import sys
 import pkg_resources
 from decimal import Decimal, getcontext
 
+f = open("docs.txt", "w")
+
 def clear_line(): # ; command
     '''clear line (not including stacks)'''
     var.number = None
@@ -71,12 +73,13 @@ def assist():
     for fname in var.ADV_OPERATORS:
         if var.ADV_OPERATORS[fname].__doc__ is not None:
             screen.write('\t\t%s\t| %s\n\n' %(fname, (var.ADV_OPERATORS[fname].__doc__.splitlines()[-1:][0])))
+            f.write('\t\t%s\t| %s\n\n' %(fname, (var.ADV_OPERATORS[fname].__doc__.splitlines()[-1:][0])))
     screen.write('''
         System operations:\n
         \t'\t| drops highest stack member {1}\n
         \trm\t| drops requested member from stack {1}\n
         \thelp\t| opens full documentation\n
-        \t?funcname\t| opens documentation for function {1}\n
+        \t?fnc\t| opens documentation for function {1}\n
         \t;\t| clears input (not including stack members) {0}\n
         \tq\t| quit
         ''')

@@ -15,11 +15,12 @@ Features
   - Extensible. Add your own math functions
   - Inbuilt function help
   - Inbuilt manual
+  - configuration file
+  - colour output
 
 Upcoming features
 -----------------
 
-  - configuration file
   - npr and ncr functions
 
 Platform
@@ -30,7 +31,7 @@ Tested on GNU/Linux and Microsoft Windows.
 Known issues
 ------------
 
-  - Unexpected results due to floating point behaviour (e.g 1.2+ 2.2 = 4.4000000004)
+  - Unexpected results due to floating point behaviour (e.g 1.2+ 2.2 = 4.4000000004). Can be mitigated by turning on decimal option in config
   - Backspace in GNU/Linux does not work
   - Some characters from previous operation show up before printing of result in GNU\Linux
 
