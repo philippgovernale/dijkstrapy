@@ -50,3 +50,8 @@ def rnd(operand1, operand2):
 def fract(operand):
     '''finds a fractional approximation to a given floating point number'''
     return Fraction(operand).limit_denominator()
+
+def ncr(operand1, operand2):
+    '''n Choose r function'''
+    result = math.factorial(operand1) / math.factorial(operand2) / math.factorial(operand1-operand2)
+    return result

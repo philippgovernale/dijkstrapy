@@ -36,7 +36,6 @@ SYS_COMMANDS = {
                 'q':sysfuncs.leave,
                 '\'':sysfuncs.drop,
                 ';':sysfuncs.clear_line,
-                #'#':sysfuncs.swap,
                 '?':sysfuncs.catch_inline_help,
                 }
 
@@ -71,7 +70,8 @@ ADV_OPERATORS = {
                  'dp':mathfuncs.decimal_places,
                  'rnd':mathfuncs.rnd,
                  'ver':sysfuncs.display_version,
-                 '&':mathfuncs.fract
+                 '&':mathfuncs.fract,
+                 'ncr':mathfuncs.ncr
                  }
 
 MATHS_CONSTANTS = {
@@ -80,6 +80,6 @@ MATHS_CONSTANTS = {
                    }
 
 operation_single = ['srt', 'cos', 'sin', 'tan', 'epow', 'tlog', '!', 'nlog', 'ra', 'deg', 'crt', '$', '&']
-operation_double = ['^', 'log', 'E', 'dp', 'rnd']
+operation_double = ['^', 'log', 'E', 'dp', 'rnd', 'ncr']
 operation_none = ['pi', 'eu']
 operation_custom = ['rm', 'help', ';', 'man', 'ver', '#']
