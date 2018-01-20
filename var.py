@@ -1,6 +1,5 @@
 import math
 import operator
-
 import mathfuncs
 import sysfuncs
 
@@ -37,7 +36,7 @@ SYS_COMMANDS = {
                 'q':sysfuncs.leave,
                 '\'':sysfuncs.drop,
                 ';':sysfuncs.clear_line,
-                '#':sysfuncs.swap,
+                #'#':sysfuncs.swap,
                 '?':sysfuncs.catch_inline_help,
                 }
 
@@ -59,6 +58,7 @@ ADV_OPERATORS = {
                  'tlog':math.log10,
                  '!':math.factorial,
                  'rm':sysfuncs.delete_stack,
+                 '#':sysfuncs.swap,
                  'nlog':math.log,
                  'ra':math.radians,
                  'deg':math.degrees,
@@ -82,4 +82,4 @@ MATHS_CONSTANTS = {
 operation_single = ['srt', 'cos', 'sin', 'tan', 'epow', 'tlog', '!', 'nlog', 'ra', 'deg', 'crt', '$', '&']
 operation_double = ['^', 'log', 'E', 'dp', 'rnd']
 operation_none = ['pi', 'eu']
-operation_custom = ['rm', 'help', ';', 'man', 'ver']
+operation_custom = ['rm', 'help', ';', 'man', 'ver', '#']

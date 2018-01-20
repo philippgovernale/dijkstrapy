@@ -37,7 +37,10 @@ while True:
     var.key = getchar._Getch()()
 
     if var.key in var.SYS_COMMANDS:
-        var.SYS_COMMANDS[var.key]()
+        if var.comhelp:
+            handler.character_handler(var.key)
+        else:
+            var.SYS_COMMANDS[var.key]()
 
     if var.conf_ansi:
         if var.comhelp:
@@ -54,7 +57,7 @@ while True:
     if var.key.isdigit():
         handler.num_handle()
     elif var.key in var.OPERATORS and var.comhelp: #this is needed to stop it from performing operation
-         handler.character_handler(var.key)
+        handler.character_handler(var.key)
     elif var.key.isalpha() or var.key in var.ADV_OPERATORS:
         handler.character_handler(var.key)
     elif var.key in var.OPERATORS:
