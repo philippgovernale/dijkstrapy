@@ -19,11 +19,13 @@ def invert_sign(operand):
     return -operand
 
 def decimal_places(operand1, operand2):
+    '''changes the decimal precision of a floating point number'''
     precision = int(operand2)
     result = round(operand1, precision)
     return result
 
 def rnd(operand1, operand2):
+    '''rounds to given precision'''
     num_before_dot = len(str(operand1).split('.')[0])
     operand1 = float(operand1)
     operand2 = int(operand2)
@@ -46,4 +48,5 @@ def rnd(operand1, operand2):
     return result
 
 def fract(operand):
+    '''finds a fractional approximation to a given floating point number'''
     return Fraction(operand).limit_denominator()

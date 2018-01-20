@@ -73,9 +73,8 @@ def assist():
             screen.write('\t\t%s\t| %s\n\n' %(fname, (var.ADV_OPERATORS[fname].__doc__.splitlines()[-1:][0])))
     screen.write('''
         System operations:\n
-        \t'\t| drops highest stack member {0}\n
+        \t'\t| drops highest stack member {1}\n
         \trm\t| drops requested member from stack {1}\n
-        \t#\t| swaps last two members of stack {1}\n
         \thelp\t| opens full documentation\n
         \t?funcname\t| opens documentation for function {1}\n
         \t;\t| clears input (not including stack members) {0}\n
@@ -137,6 +136,7 @@ def inline_help():
     var.number = None
 
 def display_version():
+    '''displays dijkstrapy version'''
     version_file = open('/data/VERSION')
     version = version_file.read().strip()
     screen.clear()
