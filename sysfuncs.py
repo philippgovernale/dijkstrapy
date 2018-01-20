@@ -41,6 +41,7 @@ def drop():
 
 def swap():
     '''swap the last two stack positions'''
+    #this function works differently from other two operand functions. Hence stackop func cannot be used
     try:
         a = var.stack.pop()
         b = var.stack.pop()
@@ -115,14 +116,19 @@ def leave():
 def catch_inline_help():
     var.comhelp = True
     var.helpcommand = '?'
-    screen.write('?')
 
 def inline_help():
     screen.clear()
     if var.helpcommand[1:] in var.ADV_OPERATORS:
-        screen.write(var.ADV_OPERATORS[var.helpcommand[1:]].__doc__)
+        try:
+            screen.write(var.ADV_OPERATORS[var.helpcommand[1:]].__doc__)
+        except TypeError:
+            screen.write("Missing documentation for: %s"%(var.helpcommand[1:]))
     elif var.helpcommand[1:] in var.OPERATORS:
-        screen.write(var.OPERATORS[var.helpcommand[1:]].__doc__)
+        try:
+            screen.write(var.OPERATORS[var.helpcommand[1:]].__doc__)
+        except TypeError:
+            screen.write("Missing documentation for: %s"%(var.helpcommand[1:]))
     raw_input('\nPress enter to continue')
     screen.clear()
     var.comhelp = False
