@@ -29,13 +29,16 @@ conf_colour_digit_stack = 'green'
 conf_colour_alpha = 'green'
 conf_colour_inline_help = 'cyan'
 
+sys_commands = []
+
 SYS_COMMANDS = {
                 '\r':sysfuncs.newline,
                 '\b':sysfuncs.backspace,
                 'q':sysfuncs.leave,
                 '\'':sysfuncs.drop,
                 ';':sysfuncs.clear_line,
-                '?':sysfuncs.catch_inline_help
+                '#':sysfuncs.swap,
+                '?':sysfuncs.catch_inline_help,
                 }
 
 OPERATORS = {

@@ -62,6 +62,9 @@ def load_config():
     ansi = cfg.get('Main Configurations', 'ansi')
     var.conf_ansi = str2bool(ansi)
 
+    quit_command = cfg.get('Command shortcuts','quit')
+    var.SYS_COMMANDS[quit_command] = sysfuncs.leave
+
 def read_argv():
     arguments = sys.argv[1:]
     for arg in arguments:

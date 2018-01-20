@@ -39,6 +39,19 @@ def drop():
     finally:
         screen.draw()
 
+def swap():
+    '''swap the last two stack positions'''
+    try:
+        a = var.stack.pop()
+        b = var.stack.pop()
+        var.stack.append(a)
+        var.stack.append(b)
+    except IndexError:
+        screen.write("\nCannot remove stack")
+        raw_input("\nPress enter to continue...")
+    finally:
+        screen.draw()    
+
 def assist():
     '''show help manual'''
     screen.clear()
