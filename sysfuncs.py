@@ -50,12 +50,14 @@ def swap():
         screen.write("\nCannot remove stack")
         raw_input("\nPress enter to continue...")
     finally:
-        screen.draw()    
+        screen.draw()
+        screen.write('\b \b') #temporary solution
 
 def assist():
     '''show help manual'''
-    screen.clear()
-    screen.write('''Dijkstrapy Documentation\n
+    #screen.clear()
+    #starting newline is temp solution
+    screen.write('''\nDijkstrapy Documentation\n
         Dijkstrapy is a reverse polish notation (rpn) calculator that intends to simulate the experience of such a
         calculator on pc.\n
         Simple operations:\n
@@ -72,6 +74,7 @@ def assist():
         System operations:\n
         \t'\t| drops highest stack member {0}\n
         \trm\t| drops requested member from stack {1}\n
+        \t#\t| swaps last two members of stack {1}\n
         \thelp\t| opens full documentation\n
         \t?funcname\t| opens documentation for function {1}\n
         \t;\t| clears input (not including stack members) {0}\n
