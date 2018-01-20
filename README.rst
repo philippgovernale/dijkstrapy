@@ -48,54 +48,6 @@ Documentation
 
 Documentation on the use of this application is available by typing 'man' or 'help' in the main program
 
-Simple operations:
-    +,-,*,/
-
-Stack operations:
-     rm | remove stack member x
-     #	| swap the last two stack positions
-     '  | drops highest stack member
-
-Math functions:
-      $	| invert sign of operand
-      ^	| Return x**y (x to the power of y).
-      ! | Return factorial(x)
-    srt	| Return the square root of x.
-    log	| If the base not specified, returns the natural logarithm (base e) of x.
-  tlog	| Return the base 10 logarithm of x.
-    sin	| Return the sine of x (measured in radians).
-    cos	| Return the cosine of x (measured in radians).
-    tan | Retruns the tangent of x (measured in radians)
-    crt	| Return the cube root of x
-  epow	| Return e raised to the power of x.
-    ncr	| n Choose r function
-
-Conversions:
-
-    ra	| Convert angle x from degrees to radians.
-    deg	| Convert angle x from radians to degrees.
-
-Number
-
-      &	| finds a fractional approximation to a given floating point number
-      E	| scientific notation
-     dp | changes the decimal precision of a floating point number
-    rnd | rounds to given precision
-     &  | Returns fraction approximation of a float
-
-Constants
-
-    pi | pi
-    eu | e
-
-System operations:
-
-  man  | opens full documentation
-  ?fnc | opens documentation for function
-     ; | clears input (not including stack members)
-   ver | displays dijkstrapy version
-     q | quit
-
 For developers
 -------------
 
