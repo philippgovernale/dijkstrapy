@@ -4,6 +4,7 @@ import sys
 import sysfuncs
 
 def str2bool(s):
+    #returns true if argument in defined strings
     return s.lower() in ("yes", "1", 'true')
 
 def check_colour(colour):
@@ -64,6 +65,12 @@ def load_config():
 
     quit_command = cfg.get('Command shortcuts','quit')
     var.SYS_COMMANDS[quit_command] = sysfuncs.leave
+
+    #read Custom constants
+    for opt in cfg.options('Custom Constants'):
+        val = cfg.get('Custom Constants',opt)
+        var.MATHS_CONSTANTS[opt] = val
+        var.operation_none.append(opt)
 
 def read_argv():
     arguments = sys.argv[1:]
