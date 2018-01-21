@@ -56,14 +56,14 @@ def draw():
     # hack for liux problem
     if var.key.isalpha() or var.key in var.OPERATORS:
         write('\b \b')
-    for digits in var.stack:
+    for i, digits in enumerate(var.stack):
         if var.conf_ansi:
             if var.conf_sci_not:
-                write("stack %s:  %e\n" %(return_custom(str(var.stack.index(digits)), var.conf_colour_digit_stack_number), digits))
+                write("stack %s:  %e\n" %(return_custom(str(i), var.conf_colour_digit_stack_number), digits))
             else:
-                write("stack %s:  %s\n" %(return_custom(str(var.stack.index(digits)), var.conf_colour_digit_stack_number),return_custom(str(digits), var.conf_colour_digit_stack)))
+                write("stack %s:  %s\n" %(return_custom(str(i), var.conf_colour_digit_stack_number),return_custom(str(digits), var.conf_colour_digit_stack)))
         else:
             if var.conf_sci_not:
-                write("stack %s   %e\n" %(str(var.stack.index(digits)), digits))
+                write("stack %s   %e\n" %(str(i), digits))
             else:
-                write("stack %s   %s\n" %(str(var.stack.index(digits)), digits))
+                write("stack %s   %s\n" %(str(i), digits))
