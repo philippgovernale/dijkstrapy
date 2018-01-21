@@ -48,10 +48,10 @@ Documentation
 
 Documentation on the use of this application is available by typing 'man' or 'help' in the main program
 
-####Simple operations:
+#### Simple operations:
 +, - ,\*,\\
 
-####Stack operations
+#### Stack operations:
 
 | Command | Action                     |
 | ------- | -------------------------- |
@@ -59,11 +59,11 @@ Documentation on the use of this application is available by typing 'man' or 'he
 | \#      | stack the last             |
 | \'      | drops highest stack member |
 
-####Math functions:
+#### Math functions:
 | Command | Action                                   |
 | ------- | ---------------------------------------- |
 | $       | invert sign of operand                   |
-| ^       | Return x\**y (x to the power of y).      |
+| ^       | Return x\*\*y (x to the power of y).      |
 | !       | Return factorial(x)                      |
 | srt     | Return the square root of x.             |
 | log     | If the base not specified, returns the natural logarithm (base e of x |
@@ -75,13 +75,13 @@ Documentation on the use of this application is available by typing 'man' or 'he
 | epow    | Return e raised to the power of x.       |
 | ncr     | n Choose r function                      |
 
-####Conversions:
+#### Conversions:
 | Command | Action                                   |
 | ------- | ---------------------------------------- |
 | ra      | Convert angle x from degrees to radians. |
 | deg     | Convert angle x from radians to degrees. |
 
-####Number
+#### Number:
 
 | Command | Action                                   |
 | ------- | ---------------------------------------- |
@@ -91,14 +91,14 @@ Documentation on the use of this application is available by typing 'man' or 'he
 | rnd     | rounds to given precision                |
 | &       | Returns fraction approximation of a float |
 
-####Constants
+#### Constants
 
 | Command | Action     |
 | ------- | ---------- |
 | pi      | returns pi |
 | eu      | returns e  |
 
-####System operations:
+#### System operations:
 
 | Command | Action                                   |
 | ------- | ---------------------------------------- |
