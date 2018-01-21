@@ -20,13 +20,11 @@ def delete_stack(): #rm command
         a = var.stack.pop()
     except IndexError:
         screen.write("\nNeed a stack to remove\n")
-    else:
-        try:
-            del var.stack[a]
-        except IndexError:
-            screen.write("\nStack %r does not exist. Cannot remove\n"%(a))
+    try:
+        del var.stack[int(a)]
+    except IndexError:
+        screen.write("\nStack %r does not exist. Cannot remove\n"%(a))
     finally:
-        raw_input("Press enter to continue")
         screen.draw()
 
 def drop():
@@ -38,6 +36,7 @@ def drop():
         raw_input("\nPress enter to continue...")
     finally:
         screen.draw()
+        #screen.write('\b \b') # temporary solution
 
 def swap():
     '''swap the last two stack positions'''
@@ -52,11 +51,11 @@ def swap():
         raw_input("\nPress enter to continue...")
     finally:
         screen.draw()
-        screen.write('\b \b') #temporary solution
+        #screen.write('\b \b') #temporary solution
 
 def assist():
     '''show help manual'''
-    #screen.clear()
+    screen.clear()
     #starting newline is temp solution
     screen.write('''\nDijkstrapy Documentation\n
         Dijkstrapy is a reverse polish notation (rpn) calculator that intends to simulate the experience of such a
