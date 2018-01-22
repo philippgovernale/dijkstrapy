@@ -13,6 +13,7 @@ Features
   - Easily enter constants
   - Manage stacks with builtin commands
   - Extensible. Add your own math functions (mathfuncs)
+  - Different modes (ie scientific notation)
   - Inbuilt function help
   - Inbuilt manual
   - Configuration file
@@ -23,6 +24,12 @@ Upcoming features:
 
   - Ability to add user defined constants
   - npr function
+
+Bugs to fix:
+---
+  - not updating stack number when entering same number Done!
+  - rm function not working as designed. Done!
+  - Fixed another bug
 
 Install & Run
 -----------------
@@ -56,7 +63,7 @@ Documentation on the use of this application is available by typing 'man' or 'he
 | Command | Action                     |
 | ------- | -------------------------- |
 | rm      | remove stack member        |
-| \#      | stack the last             |
+| \#      | swap the last two stacks   |
 | \'      | drops highest stack member |
 
 #### Math functions:
@@ -89,7 +96,6 @@ Documentation on the use of this application is available by typing 'man' or 'he
 | E       | scientific notation                      |
 | dp      | changes the decimal precision of a floating point number |
 | rnd     | rounds to given precision                |
-| &       | Returns fraction approximation of a float |
 
 #### Constants
 

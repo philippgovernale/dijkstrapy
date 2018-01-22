@@ -22,11 +22,10 @@ def match_and_operate(keyw):
 
 def operator_handler(operator):
     if not var.tostack:
-        if var.number is not None:
-            if var.conf_decimal:
-                var.stack.append(Decimal(var.number))
-            else:
-                var.stack.append(float(var.number))
+        if var.number and var.conf_decimal:
+            var.stack.append(Decimal(var.number))
+        elif var.number:
+            var.stack.append(float(var.number))
         var.tostack = True
     stackop.operate(operator)
     var.number = None
@@ -39,13 +38,10 @@ def character_handler(char):
             sysfuncs.inline_help()
     elif var.keyword is None:
         var.keyword = var.key
-        if var.keyword in var.ADV_OPERATORS or var.keyword in var.MATHS_CONSTANTS:
-            match_and_operate(var.keyword)
-            var.keyword = None
-            var.number = None
     else:
         var.keyword += char
-        if var.keyword in var.ADV_OPERATORS or var.keyword in var.MATHS_CONSTANTS:
-            match_and_operate(var.keyword)
-            var.keyword = None
-            var.number = None
+
+    if var.keyword in var.ADV_OPERATORS or var.keyword in var.MATHS_CONSTANTS:
+        match_and_operate(var.keyword)
+        var.keyword = None
+        var.number = None
