@@ -66,6 +66,8 @@ def load_config():
     quit_command = cfg.get('Command shortcuts','quit')
     var.SYS_COMMANDS[quit_command] = sysfuncs.leave
 
+    var.conf_prompt = cfg.get('Main Configurations', 'prompt')
+
     #read Custom constants
     for opt in cfg.options('Custom Constants'):
         val = cfg.get('Custom Constants',opt)

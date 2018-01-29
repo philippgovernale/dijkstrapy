@@ -23,6 +23,7 @@ conf_ansi = True
 conf_sci_not = False
 conf_decimal = True
 conf_decimal_precision = 20
+conf_prompt = '>'
 
 conf_colour_reset = False
 conf_colour_digit_stack_number = 'yellow'
@@ -45,7 +46,7 @@ OPERATORS = {
              '+':operator.add,
              '-':operator.sub,
              '*':operator.mul,
-             '/':operator.div,
+             '/':operator.div
              }
 
 ADV_OPERATORS = {

@@ -67,4 +67,5 @@ def draw():
                 write("# %s:  %e\n" %(str(i), digits))
             else:
                 write("# %s:  %s\n" %(str(i), digits))
-    write('\x1b[38;5;128m> > > \x1b[0m')
+    #write('\x1b[38;5;128m> > > \x1b[0m')
+    write(var.conf_prompt)
