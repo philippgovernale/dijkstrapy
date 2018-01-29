@@ -59,11 +59,12 @@ def draw():
     for i, digits in enumerate(var.stack):
         if var.conf_ansi:
             if var.conf_sci_not:
-                write("stack %s:  %e\n" %(return_custom(str(i), var.conf_colour_digit_stack_number), digits))
+                write("# %s:  %e\n" %(return_custom(str(i), var.conf_colour_digit_stack_number), digits))
             else:
-                write("stack %s:  %s\n" %(return_custom(str(i), var.conf_colour_digit_stack_number),return_custom(str(digits), var.conf_colour_digit_stack)))
+                write("# %s:  %s\n" %(return_custom(str(i), var.conf_colour_digit_stack_number),return_custom(str(digits), var.conf_colour_digit_stack)))
         else:
             if var.conf_sci_not:
-                write("stack %s   %e\n" %(str(i), digits))
+                write("# %s:  %e\n" %(str(i), digits))
             else:
-                write("stack %s   %s\n" %(str(i), digits))
+                write("# %s:  %s\n" %(str(i), digits))
+    write('\x1b[38;5;128m> > > \x1b[0m')

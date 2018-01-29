@@ -33,12 +33,16 @@ if os.name == 'nt':
     import win10col
     win10col.enable_VT()
 
+screen.draw()
 while True:
     var.key = getchar._Getch()()
 
     if var.key in var.SYS_COMMANDS:
         var.SYS_COMMANDS[var.key]()
 
+# Don't write RCs
+    if var.key == '\r':
+        continue
 #colour
     if var.conf_ansi:
         if var.comhelp:
@@ -54,7 +58,8 @@ while True:
 
     if var.key.isdigit():
         handler.num_handle()
-    elif var.key in var.OPERATORS and (var.comhelp or var.recurs): #this is needed to stop it from performing operation
+    #this is needed to prevent operators being handled by operator handler during help and recurs functions
+    elif var.key in var.OPERATORS and (var.comhelp or var.recurs):
         handler.character_handler(var.key)
     elif var.key.isalpha() or var.key in var.ADV_OPERATORS:
         handler.character_handler(var.key)

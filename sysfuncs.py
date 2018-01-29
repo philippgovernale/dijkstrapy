@@ -109,6 +109,7 @@ def backspace():
             var.helpcommand = None
 
 def leave():
+    screen.write('\r')
     sys.exit()
 
 def catch_inline_help():
