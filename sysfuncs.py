@@ -1,7 +1,7 @@
 import var
 import screen
-
 import sys
+import stackop
 import pkg_resources
 from decimal import Decimal, getcontext
 
@@ -150,3 +150,22 @@ def set_precision(precision):
         precis = 20
     else:
         getcontext().prec = precis
+
+def catch_recurs():
+    var.recurs = True
+    var.recurscommand = '@'
+
+def recursion():
+    op = var.recurscommand[1]
+    screen.write(op)
+    if op == 'a' and var.recurscommand[2] in var.OPERATORS:
+        screen.write("Got here")
+        for i in range(len(var.stack)-1):
+            stackop.operate(var.recurscommand[2])
+    elif op in var.OPERATORS:
+        num = var.stack.pop()
+        for n in range(int(num)-1):
+            stackop.operate(op)
+    screen.draw()
+    var.recurs = False
+    var.recurscommand = None

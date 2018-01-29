@@ -16,6 +16,8 @@ command = False
 comhelp = False
 lastkey = None
 helpcommand = None
+recurs = False
+recurscommand = None
 
 conf_ansi = True
 conf_sci_not = False
@@ -36,13 +38,14 @@ SYS_COMMANDS = {
                 'q':sysfuncs.leave,
                 ';':sysfuncs.clear_line,
                 '?':sysfuncs.catch_inline_help,
+                '@':sysfuncs.catch_recurs
                 }
 
 OPERATORS = {
              '+':operator.add,
              '-':operator.sub,
              '*':operator.mul,
-             '/':operator.div
+             '/':operator.div,
              }
 
 ADV_OPERATORS = {

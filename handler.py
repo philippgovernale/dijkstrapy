@@ -36,6 +36,16 @@ def character_handler(char):
         var.helpcommand += char
         if var.helpcommand[1:] in var.ADV_OPERATORS or var.helpcommand[1:] in var.OPERATORS:
             sysfuncs.inline_help()
+    elif var.recurs:
+        var.recurscommand += char
+        try:
+            if var.recurscommand[1] == 'a' and var.recurscommand[2] in var.OPERATORS:
+                sysfuncs.recursion()
+            elif var.recurscommand[1] in var.OPERATORS:
+                sysfuncs.recursion()
+        except IndexError:
+            pass
+
     elif var.keyword is None:
         var.keyword = var.key
     else:

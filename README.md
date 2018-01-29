@@ -22,14 +22,15 @@ Features
 Upcoming features:
 -----------------
 
-  - Ability to add user defined constants
-  - npr function
+  - Ability to add user defined constants. Done!
+  - Npr function
+  - Apply operation recursively. Done!
+  - More colour options
+  - Vim like set command
+  - rewrite with classifiers
+  - command line arguments mode
+  - Add ability to change the trigger key for any function
 
-Bugs to fix:
----
-  - not updating stack number when entering same number Done!
-  - rm function not working as designed. Done!
-  - Fixed another bug
 
 Install & Run
 -----------------
