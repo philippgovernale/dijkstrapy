@@ -59,12 +59,8 @@ while True:
     if var.key.isdigit():
         handler.num_handle()
     #this is needed to prevent operators being handled by operator handler during help and recurs functions
-    elif var.key in var.OPERATORS and (var.comhelp or var.recurs):
-        handler.character_handler(var.key)
     elif var.key.isalpha() or var.key in var.ADV_OPERATORS:
-        handler.character_handler(var.key)
-    elif var.key in var.OPERATORS:
-        handler.operator_handler(var.key)
+        handler.character_handler(var.key) #character handler does not check whether there is a number waiting to be pushed to stack
     elif var.key == '.':
         if var.number:
             var.number = var.number+'.'

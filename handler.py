@@ -3,7 +3,8 @@ import stackop
 import sysfuncs
 from decimal import Decimal
 
-def num_handle():
+def num_handle(): # why not move numbers to stack here as well? Because we don't know whether the number has finished
+    '''sets number variable from key'''
     if var.number is None:
         var.number = var.key
     elif var.number:
@@ -20,21 +21,13 @@ def match_and_operate(keyw):
     elif keyw in var.operation_custom:
         var.ADV_OPERATORS[var.keyword]()
 
-def operator_handler(operator):
-    if not var.tostack:
-        if var.number and var.conf_decimal:
-            var.stack.append(Decimal(var.number))
-        elif var.number:
-            var.stack.append(float(var.number))
-        var.tostack = True
-    stackop.operate(operator)
-    var.number = None
-
 def character_handler(char):
+    '''handles all characters (non numbers) and redirects to appropiate control'''
     var.command = True
+    # why can comhelp not be regular keyword
     if var.comhelp:
         var.helpcommand += char
-        if var.helpcommand[1:] in var.ADV_OPERATORS or var.helpcommand[1:] in var.OPERATORS:
+        if var.helpcommand[1:] in var.ADV_OPERATORS:
             sysfuncs.inline_help()
     elif var.recurs:
         var.recurscommand += char

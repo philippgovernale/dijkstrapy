@@ -60,11 +60,6 @@ def assist():
     screen.write('''\nDijkstrapy Documentation\n
         Dijkstrapy is a reverse polish notation (rpn) calculator that intends to simulate the experience of such a
         calculator on pc.\n
-        Simple operations:\n
-        \t+\t| adds numbers {2}\n
-        \t-\t| subtracts numbers {2}\n
-        \t*\t| multiplies numbers {2}\n
-        \t/\t| divides number {2}\n
         Math functions:\n
     ''')
     for fname in var.ADV_OPERATORS:
@@ -83,6 +78,7 @@ def assist():
     clear_line()
 
 def newline():
+    '''appends number to stack and redraws screen'''
     if var.number is not None:
         if var.conf_decimal:
             getcontext.prec = 10
@@ -123,11 +119,6 @@ def inline_help():
             screen.write(var.ADV_OPERATORS[var.helpcommand[1:]].__doc__)
         except TypeError:
             screen.write("Missing documentation for: %s"%(var.helpcommand[1:]))
-    elif var.helpcommand[1:] in var.OPERATORS:
-        try:
-            screen.write(var.OPERATORS[var.helpcommand[1:]].__doc__)
-        except TypeError:
-            screen.write("Missing documentation for: %s"%(var.helpcommand[1:]))
     raw_input('\nPress enter to continue')
     screen.clear()
     var.comhelp = False
@@ -152,6 +143,7 @@ def set_precision(precision):
     else:
         getcontext().prec = precis
 
+#these shouldn't be required
 def catch_recurs():
     var.recurs = True
     var.recurscommand = '@'
@@ -159,11 +151,11 @@ def catch_recurs():
 def recursion():
     op = var.recurscommand[1]
     screen.write(op)
-    if op == 'a' and var.recurscommand[2] in var.OPERATORS:
+    if op == 'a' and var.recurscommand[2] in ['+','-','*','/']:
         screen.write("Got here")
         for i in range(len(var.stack)-1):
             stackop.operate(var.recurscommand[2])
-    elif op in var.OPERATORS:
+    elif op in ['+','-','*','/']:
         num = var.stack.pop()
         for n in range(int(num)-1):
             stackop.operate(op)

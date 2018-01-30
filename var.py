@@ -42,14 +42,12 @@ SYS_COMMANDS = {
                 '@':sysfuncs.catch_recurs
                 }
 
-OPERATORS = {
-             '+':operator.add,
-             '-':operator.sub,
-             '*':operator.mul,
-             '/':operator.div
-             }
-
 ADV_OPERATORS = {
+                 '+':operator.add,
+                 '-':operator.sub,
+                 '*':operator.mul,
+                 '/':operator.div,
+
                  '^':math.pow,
                  'srt':math.sqrt,
                  'cos':math.cos,
@@ -84,6 +82,6 @@ MATHS_CONSTANTS = {
                    }
 
 operation_single = ['srt', 'cos', 'sin', 'tan', 'epow', 'tlog', '!', 'nlog', 'ra', 'deg', 'crt', '$', '&']
-operation_double = ['^', 'log', 'E', 'dp', 'rnd', 'ncr']
+operation_double = ['^', 'log', 'E', 'dp', 'rnd', 'ncr', '+', '-', '*', '/']
 operation_none = ['pi', 'eu']
 operation_custom = ['rm', 'help', ';', 'man', 'ver', '#', '\'']
