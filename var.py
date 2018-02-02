@@ -13,9 +13,7 @@ tostack = True
 number = None
 keyword = None
 command = False
-comhelp = False
 lastkey = None
-helpcommand = None
 recurs = False
 recurscommand = None
 
@@ -38,7 +36,6 @@ SYS_COMMANDS = {
                 '\b':sysfuncs.backspace,
                 'q':sysfuncs.leave,
                 ';':sysfuncs.clear_line,
-                '?':sysfuncs.catch_inline_help,
                 '@':sysfuncs.catch_recurs
                 }
 

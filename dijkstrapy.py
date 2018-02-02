@@ -45,9 +45,7 @@ while True:
         continue
 #colour
     if var.conf_ansi:
-        if var.comhelp:
-            screen.write_custom(var.key, var.conf_colour_inline_help)
-        elif var.key.isalpha():
+        if var.key.isalpha():
             screen.write_custom(var.key, var.conf_colour_alpha)
         elif var.key in var.ADV_OPERATORS:
             screen.write_custom(var.key, 'red')
@@ -59,7 +57,7 @@ while True:
     if var.key.isdigit():
         handler.num_handle()
     #this is needed to prevent operators being handled by operator handler during help and recurs functions
-    elif var.key.isalpha() or var.key in var.ADV_OPERATORS:
+    elif var.key.isalpha() or var.key in var.ADV_OPERATORS or var.key =='?':
         handler.character_handler(var.key) #character handler does not check whether there is a number waiting to be pushed to stack
     elif var.key == '.':
         if var.number:

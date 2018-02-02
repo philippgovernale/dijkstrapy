@@ -9,7 +9,7 @@ def cube_root(operand):
     return result
 
 def sci_notation(operand1, operand2):
-    '''scientific notation'''
+    '''scientific notation. For nums x and y retuns x *10^y'''
     multiplier = math.pow(10, operand2)
     result = operand1 * multiplier
     return result

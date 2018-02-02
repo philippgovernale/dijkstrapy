@@ -108,21 +108,14 @@ def leave():
     screen.write('\r')
     sys.exit()
 
-def catch_inline_help():
-    var.comhelp = True
-    var.helpcommand = '?'
-
 def inline_help():
     screen.clear()
-    if var.helpcommand[1:] in var.ADV_OPERATORS:
-        try:
-            screen.write(var.ADV_OPERATORS[var.helpcommand[1:]].__doc__)
-        except TypeError:
-            screen.write("Missing documentation for: %s"%(var.helpcommand[1:]))
+    try:
+        screen.write(var.ADV_OPERATORS[var.keyword[1:]].__doc__)
+    except TypeError:
+        screen.write("Missing documentation for: %s"%(var.keyword[1:]))
     raw_input('\nPress enter to continue')
     screen.clear()
-    var.comhelp = False
-    var.helpcommand = None
     var.keyword = None
     var.number = None
 

@@ -25,11 +25,7 @@ def character_handler(char):
     '''handles all characters (non numbers) and redirects to appropiate control'''
     var.command = True
     # why can comhelp not be regular keyword
-    if var.comhelp:
-        var.helpcommand += char
-        if var.helpcommand[1:] in var.ADV_OPERATORS:
-            sysfuncs.inline_help()
-    elif var.recurs:
+    if var.recurs:
         var.recurscommand += char
         try:
             if var.recurscommand[1] == 'a' and var.recurscommand[2] in var.OPERATORS:
@@ -48,3 +44,5 @@ def character_handler(char):
         match_and_operate(var.keyword)
         var.keyword = None
         var.number = None
+    elif var.keyword[0] == '?' and var.keyword[1:] in var.ADV_OPERATORS:
+        sysfuncs.inline_help()
