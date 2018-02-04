@@ -2,6 +2,7 @@ import var
 import stackop
 import sysfuncs
 from decimal import Decimal
+import screen
 
 def num_handle(): # why not move numbers to stack here as well? Because we don't know whether the number has finished
     '''sets number variable from key'''
@@ -14,10 +15,13 @@ def num_handle(): # why not move numbers to stack here as well? Because we don't
 def match_and_operate(keyw):
     if keyw in var.operation_single:
         stackop.adv_operate_single(var.ADV_OPERATORS[keyw])
+        screen.draw()
     elif keyw in var.operation_double:
         stackop.adv_operate_double(var.ADV_OPERATORS[keyw])
+        screen.draw()
     elif keyw in var.operation_none:
         stackop.adv_operate_none(var.MATHS_CONSTANTS[keyw])
+        screen.draw()
     elif keyw in var.operation_custom:
         var.ADV_OPERATORS[var.keyword]()
 

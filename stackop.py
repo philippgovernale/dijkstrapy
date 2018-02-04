@@ -2,6 +2,7 @@ import var
 import screen
 import sys
 from decimal import Decimal, getcontext
+import operator
 
 def two_pop():
     a = var.stack.pop()
@@ -40,8 +41,6 @@ def adv_operate_double(function):
             screen.clear()
         else:
             var.stack.append(result)
-    finally:
-        screen.draw()
 
 def adv_operate_single(function):
     append_rogue()
@@ -64,8 +63,6 @@ def adv_operate_single(function):
             screen.clear()
         else:
             var.stack.append(result)
-    finally:
-        screen.draw()
 
 def adv_operate_none(function):
     if var.conf_decimal:

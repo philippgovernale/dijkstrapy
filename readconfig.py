@@ -2,6 +2,9 @@ from ConfigParser import ConfigParser
 import var
 import sys
 import sysfuncs
+import screen
+import sysfuncs
+import stackop
 
 def str2bool(s):
     #returns true if argument in defined strings
@@ -76,7 +79,7 @@ def load_config():
 
 def read_argv():
     arguments = sys.argv[1:]
-    for arg in arguments:
+    for i,arg in enumerate(arguments):
         if arg in ['--noansi', '--help', '--sci-not']:
             if arg == '--noansi':
                 var.conf_ansi = False
@@ -84,6 +87,14 @@ def read_argv():
                 sysfuncs.assist()
             elif arg == '--sci-not':
                 var.conf_sci_not = True
+				
+        elif arg.isdigit():
+            var.stack.append(float(arg))
+        elif arg in var.ADV_OPERATORS:
+            res = stackop.adv_operate_double(var.ADV_OPERATORS[arg])
+            if i == (len(arguments) -1):
+                print var.stack[0]
+                sysfuncs.leave()
         else:
             print arg, "is not a dijkstrapy command. See 'dijkstrapy --help'"
             sys.exit()
