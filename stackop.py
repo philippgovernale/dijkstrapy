@@ -9,23 +9,14 @@ def two_pop():
     return (float(a), float(b))
 
 def append_rogue():
+    '''appends number to stack if it is not already there'''
     if var.number is not None:
         if var.conf_decimal:
             var.stack.append(Decimal(var.number))
         else:
             var.stack.append(float(var.number))
 
-def operate(operator):
-    try:
-        a = two_pop()
-    except IndexError:
-        screen.write("\nTwo numbers required in the stack to complete operation")
-        raw_input()
-        screen.clear()
-    else:
-        applied = var.OPERATORS[operator](a[1],a[0])
-        var.stack.append(applied)
-        screen.draw()
+# the operate functions should not be calling draw.
 
 def adv_operate_double(function):
     # var.number is not none if the user has entered a digit before the command
