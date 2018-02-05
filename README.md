@@ -1,8 +1,8 @@
 What is it?
 --------------
 
-dijkstrapy is a command line reverse polish notation calculator written in python. The purpose of this tool
-is to simulate the experience of an rpn calculator on pc by minimising the number of keys required for input.
+Dijkstrapy is a command line reverse polish notation calculator written in python. The purpose of this tool
+is to simulate the experience of an rpn calculator on pc by minimising the number of keys required for input. NOTE: Software is experimental, pre-release
 
 Features
 -------
@@ -14,6 +14,7 @@ Features
   - Manage stacks with builtin commands
   - Extensible. Add your own math functions (mathfuncs)
   - Different modes (ie scientific notation)
+  - Argument form. Pass an expression as arguments to djkstrapy
   - Inbuilt function help
   - Inbuilt manual
   - Configuration file
@@ -22,13 +23,13 @@ Features
 Upcoming features:
 -----------------
 
-  - Ability to add user defined constants. Done!
+  - Ability to add user defined constants. **Done!**
   - Npr function
   - Apply operation recursively. Done!
   - More colour options
   - Vim like set command
-  - rewrite with classifiers
-  - command line arguments mode
+  - rewrite with classes
+  - command line arguments mode **Done!**
   - Add ability to change the trigger key for any function
 
 
@@ -48,13 +49,16 @@ Known issues
 ------------
 
   - Unexpected results due to floating point behaviour (e.g 1.2+ 2.2 = 4.4000000004). Can be mitigated by turning on decimal option in config.ini
-  - Backspace in GNU/Linux does not work. Use ; function instead
-  - Some characters from previous operation show up before printing of result in GNU\Linux
+  - All text can be erased (including stack info)
+  - Some incorrect input is still not handled correctly
+  - Recursion feature has a bug
+  - ~~Backspace in GNU/Linux does not work. Use ; function instead~~
+  - ~~Some characters from previous operation show up before printing of result in GNU\Linux~~
 
 Documentation
 -------------
 
-Documentation on the use of this application is available by typing 'man' or 'help' in the main program
+Documentation on the use of this application is available by typing 'man' in the main program or by starting program with --help argument. 
 
 #### Simple operations:
 +, - ,\*,\\
@@ -71,7 +75,7 @@ Documentation on the use of this application is available by typing 'man' or 'he
 | Command | Action                                   |
 | ------- | ---------------------------------------- |
 | $       | invert sign of operand                   |
-| ^       | Return x\*\*y (x to the power of y).      |
+| ^       | Return x\*\*y (x to the power of y).     |
 | !       | Return factorial(x)                      |
 | srt     | Return the square root of x.             |
 | log     | If the base not specified, returns the natural logarithm (base e of x |
@@ -115,6 +119,18 @@ Documentation on the use of this application is available by typing 'man' or 'he
 | ver     | displays dijkstrapy version              |
 | q       | quit                                     |
 
+#### Other features
+
+##### Recursion
+
+Apply the operation recursively on stack. For now only +,-,*,/ operators are supported. 
+
+Syntax:
+
+​	n@o - where n is the number of times operation should be repeated and o is the operator
+
+​	@ao - a is parameter all. Hence operation is replied recusively to last stack member
+
 For developers
 -------------
 
@@ -133,11 +149,6 @@ Bug reporting && Suggestions
 When you find a bug, which you are almost certain of doing, please open an issue on Github.
 
 I welcome any suggestions as I am a newbie
-
-Authors
--------
-
-Philipp Governale
 
 Credits
 -------
