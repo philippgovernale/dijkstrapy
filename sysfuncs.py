@@ -4,6 +4,7 @@ import sys
 import stackop
 import pkg_resources
 from decimal import Decimal, getcontext
+import time
 
 def clear_line(): # ; command
     '''clear line (not including stacks)'''
@@ -139,15 +140,14 @@ def catch_recurs():
 
 def recursion():
     op = var.recurscommand[1]
-    screen.write(op)
+    stackop.append_rogue()
     if op == 'a' and var.recurscommand[2] in ['+','-','*','/']:
-        screen.write("Got here")
         for i in range(len(var.stack)-1):
-            stackop.operate(var.recurscommand[2])
+            stackop.adv_operate_double(var.ADV_OPERATORS[var.recurscommand[2]])
     elif op in ['+','-','*','/']:
         num = var.stack.pop()
         for n in range(int(num)-1):
-            stackop.operate(op)
+            stackop.adv_operate_double(var.ADV_OPERATORS[op])
     screen.draw()
     var.recurs = False
     var.recurscommand = None
