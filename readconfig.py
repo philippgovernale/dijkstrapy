@@ -90,11 +90,16 @@ def read_argv():
 				
         elif arg.isdigit():
             var.stack.append(float(arg))
-        elif arg in var.ADV_OPERATORS:
-            res = stackop.adv_operate_double(var.ADV_OPERATORS[arg])
+        elif arg in var.operation_single:
+            stackop.adv_operate_single(var.ADV_OPERATORS[arg])
+            if i == (len(arguments) -1):
+                print var.stack[0]
+                sysfuncs.leave()
+        elif arg in var.operation_double:
+            stackop.adv_operate_double(var.ADV_OPERATORS[arg])
             if i == (len(arguments) -1):
                 print var.stack[0]
                 sysfuncs.leave()
         else:
-            print arg, "is not a dijkstrapy command. See 'dijkstrapy --help'"
+            print arg, "is not a valid argument-mode command. See 'dijkstrapy --help'"
             sys.exit()
