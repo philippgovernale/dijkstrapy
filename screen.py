@@ -53,9 +53,6 @@ def write_custom(text, style):
 
 def draw():
     clear()
-    # hack for liux problem
-    if var.key.isalpha():
-        write('\b \b')
     for i, digits in enumerate(var.stack):
         if var.conf_ansi:
             if var.conf_sci_not:

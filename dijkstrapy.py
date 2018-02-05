@@ -48,7 +48,8 @@ while True:
         if var.key.isalpha():
             screen.write_custom(var.key, var.conf_colour_alpha)
         elif var.key in var.ADV_OPERATORS:
-            screen.write_custom(var.key, 'red')
+		    pass
+            # screen.write_custom(var.key, 'red')
         else:
             screen.write(var.key)
     else:
