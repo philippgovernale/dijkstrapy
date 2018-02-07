@@ -2,9 +2,7 @@ import var
 import screen
 import sys
 import stackop
-import pkg_resources
 from decimal import Decimal, getcontext
-import time
 
 def clear_line(): # ; command
     '''clear line (not including stacks)'''

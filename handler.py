@@ -24,6 +24,7 @@ def match_and_operate(keyw):
         screen.draw()
     elif keyw in var.operation_custom:
         var.ADV_OPERATORS[var.keyword]()
+        screen.draw()
 
 def character_handler(char):
     '''handles all characters (non numbers) and redirects to appropiate control'''
@@ -32,9 +33,9 @@ def character_handler(char):
     if var.recurs:
         var.recurscommand += char
         try:
-            if var.recurscommand[1] == 'a' and var.recurscommand[2] in var.OPERATORS:
+            if var.recurscommand[1] == 'a' and var.recurscommand[2] in ['+','-','*','/']:
                 sysfuncs.recursion()
-            elif var.recurscommand[1] in var.OPERATORS:
+            elif var.recurscommand[1] in var.ADV_OPERATORS:
                 sysfuncs.recursion()
         except IndexError:
             pass
@@ -44,7 +45,9 @@ def character_handler(char):
     else:
         var.keyword += char
 
-    if var.keyword in var.ADV_OPERATORS or var.keyword in var.MATHS_CONSTANTS:
+    if var.keyword is None:
+        pass
+    elif var.keyword in var.ADV_OPERATORS or var.keyword in var.MATHS_CONSTANTS:
         match_and_operate(var.keyword)
         var.keyword = None
         var.number = None

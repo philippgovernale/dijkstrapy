@@ -16,7 +16,7 @@ def append_rogue():
             var.stack.append(Decimal(var.number))
         else:
             var.stack.append(float(var.number))
-        var.number = None
+        #var.number = None
 
 # the operate functions should not be calling draw.
 
@@ -29,8 +29,6 @@ def adv_operate_double(function):
         screen.write("\nTwo numbers required in the stack to complete operation")
         raw_input()
         screen.clear()
-    except Exception as e:
-        screen.write('failed at adv_operate_double')
     else:
         try:
             result = function(a[1], a[0])
@@ -42,8 +40,6 @@ def adv_operate_double(function):
             screen.write("\nOverflow. Please choose numbers that leads to a result that is smaller than %r"%(sys.float_info))
             raw_input()
             screen.clear()
-        except Exception as e:
-            screen.write('failed second at adv_operate_double')
         else:
             var.stack.append(result)
 
