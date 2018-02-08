@@ -23,8 +23,6 @@ def delete_stack(): #rm command
         del var.stack[int(a)]
     except IndexError:
         screen.write("\nStack %r does not exist. Cannot remove\n"%(a))
-    finally:
-        screen.draw()
 
 def drop():
     '''remove last stack'''
@@ -33,9 +31,6 @@ def drop():
     except IndexError:
         screen.write("\nCannot remove stack")
         raw_input("\nPress enter to continue...")
-    finally:
-        screen.draw()
-        #screen.write('\b \b') # temporary solution
 
 def swap():
     '''swap the last two stack positions'''
@@ -48,9 +43,6 @@ def swap():
     except IndexError:
         screen.write("\nCannot remove stack")
         raw_input("\nPress enter to continue...")
-    finally:
-        screen.draw()
-        #screen.write('\b \b') #temporary solution
 
 def assist():
     '''show help manual'''
