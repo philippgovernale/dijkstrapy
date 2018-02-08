@@ -54,7 +54,7 @@ def write_custom(text, style):
 def draw():
     clear()
     if var.key.isalpha():
-        write('\b \b')
+         write('\b \b')
     for i, digits in enumerate(var.stack):
         if var.conf_ansi:
             if var.conf_sci_not:
@@ -67,4 +67,5 @@ def draw():
             else:
                 write("# %s:  %s\n" %(str(i), digits))
     #write('\x1b[38;5;128m> > > \x1b[0m')
+    var.curs_pos = 0
     write(var.conf_prompt)

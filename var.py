@@ -10,6 +10,7 @@ key = ''
 #to stack indicates whether a number should go to the stack. if it is false it should not
 tostack = True
 
+curs_pos = 0
 number = None
 keyword = None
 command = False
