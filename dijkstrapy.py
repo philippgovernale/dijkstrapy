@@ -37,23 +37,28 @@ screen.draw()
 while True:
     var.key = getchar._Getch()()
 
-    if var.key in var.SYS_COMMANDS:
+    if var.key == '\b' and var.curs_pos < 1:
+        continue
+    elif var.key in var.SYS_COMMANDS:
         var.SYS_COMMANDS[var.key]()
 
 # Don't write RCs
-    if var.key == '\r':
+    if var.key == '\r' or var.key == '\b':
         continue
 #colour
     if var.conf_ansi:
         if var.key.isalpha():
             screen.write_custom(var.key, var.conf_colour_alpha)
+            var.curs_pos += 1
         elif var.key in var.ADV_OPERATORS:
 		    pass
             # screen.write_custom(var.key, 'red')
         else:
             screen.write(var.key)
+            var.curs_pos += 1
     else:
         screen.write(var.key)
+        var.curs_pos += 1
 
     if var.key.isdigit():
         handler.num_handle()
