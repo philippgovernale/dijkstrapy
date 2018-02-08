@@ -28,18 +28,15 @@ def adv_operate_double(function):
     except IndexError:
         screen.write("\nTwo numbers required in the stack to complete operation")
         raw_input()
-        screen.clear()
     else:
         try:
             result = function(a[1], a[0])
         except ValueError:
             screen.write("\n%r does not accept decimal input. Please enter integer values" %(function))
             raw_input()
-            screen.clear()
         except OverflowError:
             screen.write("\nOverflow. Please choose numbers that leads to a result that is smaller than %r"%(sys.float_info))
             raw_input()
-            screen.clear()
         else:
             var.stack.append(result)
 
@@ -57,11 +54,9 @@ def adv_operate_single(function):
         except ValueError:
             screen.write("\n%r does not accept decimal input. Please enter integer values" %(function))
             raw_input()
-            screen.clear()
         except OverflowError:
             screen.write("\nOverflow. Please choose numbers that leads to a result that is smaller than %r"%(sys.float_info))
             raw_input()
-            screen.clear()
         else:
             var.stack.append(result)
 
@@ -70,4 +65,3 @@ def adv_operate_none(function):
         var.stack.append(Decimal(function))
     else:
         var.stack.append(function)
-    screen.draw()
